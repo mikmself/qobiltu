@@ -1,0 +1,1402 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("/assets/fonts/Always In My Heart.ttf");
+@import url("/assets/fonts/NetflixSans-Regular.otf");
+@import url("/assets/fonts/NetflixSans-Bold.otf");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #101010;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.mobile-container {
+  max-width: 375px;
+  width: 100%;
+  max-height: 100vh;
+  /* Animasi zoomIn untuk elemen cover */
+  /* Klas untuk elemen yang akan di animasi */
+  /* Menambahkan animasi zoomIn ke elemen */
+}
+.mobile-container .cover-section {
+  position: absolute;
+  max-width: inherit;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/assets/img/cover/background.png");
+  background-size: cover;
+  filter: brightness(80%);
+  overflow: none;
+  z-index: 9;
+}
+.mobile-container .cover-section .invitation-title {
+  color: #443113;
+  font-size: 40px;
+  margin-top: -2cm;
+  opacity: 0;
+}
+.mobile-container .cover-section .image-container {
+  width: 80% !important;
+  height: 6cm;
+}
+.mobile-container .cover-section .image-container .main-image {
+  width: 100% !important;
+  position: relative;
+  z-index: 2;
+}
+.mobile-container .cover-section .image-container .main-image.initial-state {
+  transform: scale(1.2);
+  opacity: 1;
+}
+.mobile-container .cover-section .image-container .main-image.final-state {
+  animation: zoomOutAndBorder 2s forwards;
+  will-change: transform, box-shadow;
+  transform-origin: center;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+.mobile-container .cover-section .details-container {
+  margin-top: -0.5cm;
+  opacity: 0;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.mobile-container .cover-section .details-container h1,
+.mobile-container .cover-section .details-container h2 {
+  font-size: 10px;
+}
+.mobile-container .cover-section .details-container .left-details,
+.mobile-container .cover-section .details-container .right-details {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 5%;
+  height: auto;
+}
+.mobile-container .cover-section .details-container .left-details {
+  margin-top: 1cm;
+}
+.mobile-container .cover-section .details-container .center-details {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5cm;
+}
+.mobile-container .cover-section .details-container .center-details .couple-names {
+  font-family: "Playfair Display", serif;
+  font-weight: light;
+  letter-spacing: 2px;
+  font-size: 25px;
+  background-image: url("/assets/img/cover/background.png");
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  filter: brightness(40%);
+}
+.mobile-container .cover-section .details-container .center-details .wedding-type {
+  font-family: "Playfair Display", serif;
+  font-size: 40px;
+  color: #2B1B03;
+  background-image: url("/assets/img/cover/background.png");
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  filter: brightness(40%);
+}
+.mobile-container .cover-section .details-container .center-details .date-display {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Always In My Heart", cursive;
+  font-size: 40px;
+  color: #2B1B03;
+  background-image: url("/assets/img/cover/background.png");
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  filter: brightness(40%);
+  letter-spacing: 5px;
+}
+.mobile-container .cover-section .details-container .center-details .date-display .date-icon {
+  margin-right: 0.3cm;
+}
+.mobile-container .cover-section .details-container .center-details .bottom-message {
+  width: 80%;
+}
+.mobile-container .cover-section .details-container .center-details .bottom-message .invitation-text {
+  width: 100%;
+  font-size: 10px;
+  text-align: center;
+  color: #422F0F;
+  margin-top: 0.5cm;
+}
+.mobile-container .cover-section .recipient-name {
+  width: 50%;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 0.5cm;
+  opacity: 0;
+}
+.mobile-container .cover-section .action-button {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #E50914;
+  color: #F3F2ED;
+  outline: none;
+  border: none;
+  padding: 0.2cm 0.5cm;
+  font-size: 12px;
+  position: relative;
+  top: 0.5cm;
+  font-weight: bolder;
+  opacity: 0;
+}
+.mobile-container .cover-section .action-button .button-icon {
+  width: 12px;
+  margin-right: 0.3cm;
+}
+.mobile-container .cover-section .logo-container {
+  width: 55%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  top: 1.5cm;
+  opacity: 0;
+}
+.mobile-container .cover-section .logo-container .logo-image {
+  height: 0.7cm;
+}
+@keyframes zoomOutAndBorder {
+  0% {
+    transform: scale(1.2);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  1% {
+    transform: scale(1.196);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  2% {
+    transform: scale(1.192);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  3% {
+    transform: scale(1.188);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  4% {
+    transform: scale(1.184);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  5% {
+    transform: scale(1.18);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  6% {
+    transform: scale(1.176);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  7% {
+    transform: scale(1.172);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  8% {
+    transform: scale(1.168);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  9% {
+    transform: scale(1.164);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  10% {
+    transform: scale(1.16);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  11% {
+    transform: scale(1.156);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  12% {
+    transform: scale(1.152);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  13% {
+    transform: scale(1.148);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  14% {
+    transform: scale(1.144);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  15% {
+    transform: scale(1.14);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  16% {
+    transform: scale(1.136);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  17% {
+    transform: scale(1.132);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  18% {
+    transform: scale(1.128);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  19% {
+    transform: scale(1.124);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  20% {
+    transform: scale(1.12);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  21% {
+    transform: scale(1.116);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  22% {
+    transform: scale(1.112);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  23% {
+    transform: scale(1.108);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  24% {
+    transform: scale(1.104);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  25% {
+    transform: scale(1.1);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  26% {
+    transform: scale(1.096);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  27% {
+    transform: scale(1.092);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  28% {
+    transform: scale(1.088);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  29% {
+    transform: scale(1.084);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  30% {
+    transform: scale(1.08);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  31% {
+    transform: scale(1.076);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  32% {
+    transform: scale(1.072);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  33% {
+    transform: scale(1.068);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  34% {
+    transform: scale(1.064);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  35% {
+    transform: scale(1.06);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  36% {
+    transform: scale(1.056);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  37% {
+    transform: scale(1.052);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  38% {
+    transform: scale(1.048);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  39% {
+    transform: scale(1.044);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  40% {
+    transform: scale(1.04);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  41% {
+    transform: scale(1.036);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  42% {
+    transform: scale(1.032);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  43% {
+    transform: scale(1.028);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  44% {
+    transform: scale(1.024);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  45% {
+    transform: scale(1.02);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  46% {
+    transform: scale(1.016);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  47% {
+    transform: scale(1.012);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  48% {
+    transform: scale(1.008);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  49% {
+    transform: scale(1.004);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1);
+    border: 0 solid #2B1B03;
+    opacity: 1;
+  }
+  51% {
+    transform: scale(1);
+    border: 0.2px solid #2B1B03;
+    opacity: 1;
+  }
+  52% {
+    transform: scale(1);
+    border: 0.4px solid #2B1B03;
+    opacity: 1;
+  }
+  53% {
+    transform: scale(1);
+    border: 0.6px solid #2B1B03;
+    opacity: 1;
+  }
+  54% {
+    transform: scale(1);
+    border: 0.8px solid #2B1B03;
+    opacity: 1;
+  }
+  55% {
+    transform: scale(1);
+    border: 1px solid #2B1B03;
+    opacity: 1;
+  }
+  56% {
+    transform: scale(1);
+    border: 1.2px solid #2B1B03;
+    opacity: 1;
+  }
+  57% {
+    transform: scale(1);
+    border: 1.4px solid #2B1B03;
+    opacity: 1;
+  }
+  58% {
+    transform: scale(1);
+    border: 1.6px solid #2B1B03;
+    opacity: 1;
+  }
+  59% {
+    transform: scale(1);
+    border: 1.8px solid #2B1B03;
+    opacity: 1;
+  }
+  60% {
+    transform: scale(1);
+    border: 2px solid #2B1B03;
+    opacity: 1;
+  }
+  61% {
+    transform: scale(1);
+    border: 2.2px solid #2B1B03;
+    opacity: 1;
+  }
+  62% {
+    transform: scale(1);
+    border: 2.4px solid #2B1B03;
+    opacity: 1;
+  }
+  63% {
+    transform: scale(1);
+    border: 2.6px solid #2B1B03;
+    opacity: 1;
+  }
+  64% {
+    transform: scale(1);
+    border: 2.8px solid #2B1B03;
+    opacity: 1;
+  }
+  65% {
+    transform: scale(1);
+    border: 3px solid #2B1B03;
+    opacity: 1;
+  }
+  66% {
+    transform: scale(1);
+    border: 3.2px solid #2B1B03;
+    opacity: 1;
+  }
+  67% {
+    transform: scale(1);
+    border: 3.4px solid #2B1B03;
+    opacity: 1;
+  }
+  68% {
+    transform: scale(1);
+    border: 3.6px solid #2B1B03;
+    opacity: 1;
+  }
+  69% {
+    transform: scale(1);
+    border: 3.8px solid #2B1B03;
+    opacity: 1;
+  }
+  70% {
+    transform: scale(1);
+    border: 4px solid #2B1B03;
+    opacity: 1;
+  }
+  71% {
+    transform: scale(1);
+    border: 4.2px solid #2B1B03;
+    opacity: 1;
+  }
+  72% {
+    transform: scale(1);
+    border: 4.4px solid #2B1B03;
+    opacity: 1;
+  }
+  73% {
+    transform: scale(1);
+    border: 4.6px solid #2B1B03;
+    opacity: 1;
+  }
+  74% {
+    transform: scale(1);
+    border: 4.8px solid #2B1B03;
+    opacity: 1;
+  }
+  75% {
+    transform: scale(1);
+    border: 5px solid #2B1B03;
+    opacity: 1;
+  }
+  76% {
+    transform: scale(1);
+    border: 5.2px solid #2B1B03;
+    opacity: 1;
+  }
+  77% {
+    transform: scale(1);
+    border: 5.4px solid #2B1B03;
+    opacity: 1;
+  }
+  78% {
+    transform: scale(1);
+    border: 5.6px solid #2B1B03;
+    opacity: 1;
+  }
+  79% {
+    transform: scale(1);
+    border: 5.8px solid #2B1B03;
+    opacity: 1;
+  }
+  80% {
+    transform: scale(1);
+    border: 6px solid #2B1B03;
+    opacity: 1;
+  }
+  81% {
+    transform: scale(1);
+    border: 6.2px solid #2B1B03;
+    opacity: 1;
+  }
+  82% {
+    transform: scale(1);
+    border: 6.4px solid #2B1B03;
+    opacity: 1;
+  }
+  83% {
+    transform: scale(1);
+    border: 6.6px solid #2B1B03;
+    opacity: 1;
+  }
+  84% {
+    transform: scale(1);
+    border: 6.8px solid #2B1B03;
+    opacity: 1;
+  }
+  85% {
+    transform: scale(1);
+    border: 7px solid #2B1B03;
+    opacity: 1;
+  }
+  86% {
+    transform: scale(1);
+    border: 7.2px solid #2B1B03;
+    opacity: 1;
+  }
+  87% {
+    transform: scale(1);
+    border: 7.4px solid #2B1B03;
+    opacity: 1;
+  }
+  88% {
+    transform: scale(1);
+    border: 7.6px solid #2B1B03;
+    opacity: 1;
+  }
+  89% {
+    transform: scale(1);
+    border: 7.8px solid #2B1B03;
+    opacity: 1;
+  }
+  90% {
+    transform: scale(1);
+    border: 8px solid #2B1B03;
+    opacity: 1;
+  }
+  91% {
+    transform: scale(1);
+    border: 8.2px solid #2B1B03;
+    opacity: 1;
+  }
+  92% {
+    transform: scale(1);
+    border: 8.4px solid #2B1B03;
+    opacity: 1;
+  }
+  93% {
+    transform: scale(1);
+    border: 8.6px solid #2B1B03;
+    opacity: 1;
+  }
+  94% {
+    transform: scale(1);
+    border: 8.8px solid #2B1B03;
+    opacity: 1;
+  }
+  95% {
+    transform: scale(1);
+    border: 9px solid #2B1B03;
+    opacity: 1;
+  }
+  96% {
+    transform: scale(1);
+    border: 9.2px solid #2B1B03;
+    opacity: 1;
+  }
+  97% {
+    transform: scale(1);
+    border: 9.4px solid #2B1B03;
+    opacity: 1;
+  }
+  98% {
+    transform: scale(1);
+    border: 9.6px solid #2B1B03;
+    opacity: 1;
+  }
+  99% {
+    transform: scale(1);
+    border: 9.8px solid #2B1B03;
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    border: 10px solid #2B1B03;
+    opacity: 1;
+  }
+}
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.mobile-container .invitation-title,
+.mobile-container .details-container,
+.mobile-container .recipient-name,
+.mobile-container .action-button,
+.mobile-container .logo-container {
+  opacity: 0;
+  transform: scale(0.6);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+.mobile-container .invitation-title.animate {
+  animation: zoomIn 2s forwards;
+}
+.mobile-container .details-container.animate {
+  animation: zoomIn 2s forwards;
+}
+.mobile-container .recipient-name.animate {
+  animation: zoomIn 2s forwards;
+}
+.mobile-container .action-button.animate {
+  animation: zoomIn 2s forwards;
+}
+.mobile-container .logo-container.animate {
+  animation: zoomIn 2s forwards;
+}
+.mobile-container .main-section {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.mobile-container .main-section .top-content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 11cm;
+  background-image: url("/assets/img/main/background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.mobile-container .main-section .top-content .icon-container {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -1.5cm;
+}
+.mobile-container .main-section .top-content .icon-container img.netflix-logo {
+  width: 1cm;
+}
+.mobile-container .main-section .top-content .cover-image {
+  margin-top: 1cm;
+  width: 3.3cm;
+}
+.mobile-container .main-section .top-content .other-info {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  color: #A6A6A6;
+  margin-top: 0.5cm;
+  font-family: "NetflixSans-Regular", sans-serif;
+  font-size: 14px;
+}
+.mobile-container .main-section .top-content .play-button {
+  width: 90%;
+  z-index: 10;
+  position: relative;
+  top: 0.3cm;
+  background-color: #E50914;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  padding-top: 0.2cm;
+  padding-bottom: 0.2cm;
+  cursor: pointer;
+}
+.mobile-container .main-section .top-content .play-button .button-split {
+  width: 18%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  color: #F3F2ED;
+  font-family: "NetflixSans-Regular", sans-serif;
+  font-weight: bold;
+}
+.mobile-container .main-section .top-content .play-button .play-icon {
+  width: 12px;
+}
+.mobile-container .main-section .text-content {
+  color: #F3F2ED;
+  font-family: "NetflixSans-Regular", sans-serif;
+  width: 90%;
+  position: relative;
+  top: -2.5cm;
+}
+.mobile-container .main-section .text-content .episode-title {
+  font-size: 14px;
+  margin-top: 1cm;
+  font-weight: bold;
+}
+.mobile-container .main-section .text-content .description-text {
+  font-size: 12px;
+  font-weight: light;
+  margin-top: 0.2cm;
+}
+.mobile-container .main-section .text-content .subtitle {
+  font-size: 10px;
+  font-weight: lighter;
+  margin-top: 0.2cm;
+}
+.mobile-container .main-section .text-content .subtitle .creator-text {
+  position: relative;
+  top: 0.1cm;
+}
+.mobile-container .main-section .action-container {
+  width: 90%;
+  margin-top: -2cm;
+}
+.mobile-container .main-section .action-container .actions-row {
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  color: #F3F2ED;
+  font-size: 8px;
+}
+.mobile-container .main-section .action-container .actions-row .action-item {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.mobile-container .main-section .action-container .actions-row .action-item .action-label {
+  margin-top: 0.2cm;
+}
+.mobile-container .main-section .slider-container {
+  width: 95%;
+  margin-top: -2cm;
+}
+.mobile-container .main-section .slider-container .slider-title {
+  color: #F3F2ED;
+  margin-left: 2%;
+  font-family: "NetflixSans-Regular", sans-serif;
+  font-weight: bold;
+  margin-top: 1cm;
+}
+.mobile-container .main-section .slider-container .image-slider {
+  display: flex;
+  flex-direction: row;
+  overflow: scroll;
+  margin-top: 0.3cm;
+}
+.mobile-container .main-section .slider-container .image-slider::-webkit-scrollbar {
+  display: none;
+}
+.mobile-container .main-section .slider-container .image-slider .slider-image {
+  margin-left: 0.2cm;
+  width: 4cm;
+  height: 5cm !important;
+  background-color: red;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+}
+.mobile-container .main-section .quote-card {
+  width: 90%;
+  background-color: #F3F2ED;
+  border-radius: 10px;
+  border-left: 2px solid #E50914;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3cm;
+  padding-top: 0.5cm;
+  margin-top: 2cm;
+  margin-bottom: 2cm;
+  position: relative;
+  font-family: "NetflixSans-Regular", sans-serif;
+  font-weight: bolder;
+}
+.mobile-container .main-section .quote-card .quote-image {
+  width: 3cm;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.mobile-container .main-section .quote-card .quote-text {
+  width: 70%;
+  text-align: right;
+  font-size: 12px;
+  margin-left: 3cm;
+  padding-bottom: 1cm;
+}
+.mobile-container .main-section .card-container {
+  width: 90%;
+}
+.mobile-container .main-section .card-container .card-image {
+  width: 100%;
+}
+.mobile-container .main-section .card-container .card-image:nth-child(2) {
+  margin-top: 1cm;
+}
+.mobile-container .main-section .countdown-container {
+  margin-top: 3cm;
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3cm;
+}
+.mobile-container .main-section .countdown-container .left-content {
+  width: 60%;
+}
+.mobile-container .main-section .countdown-container .left-content .countdown-timer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5cm;
+  color: #F3F2ED;
+}
+.mobile-container .main-section .countdown-container .left-content .countdown-timer .timer-item {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.mobile-container .main-section .countdown-container .left-content .countdown-timer .timer-item .timer-number {
+  font-family: "NetflixSans-Bold", sans-serif;
+  font-weight: bolder;
+  font-size: 20px;
+}
+.mobile-container .main-section .countdown-container .left-content .countdown-timer .timer-item .timer-label {
+  font-size: 10px;
+  margin-top: 0.2cm;
+}
+.mobile-container .main-section .countdown-container .left-content .akad-image {
+  width: 100%;
+}
+.mobile-container .main-section .countdown-container .right-content {
+  width: 40%;
+}
+.mobile-container .main-section .countdown-container .right-content .thanos-image {
+  width: 100%;
+}
+.mobile-container .main-section .events-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2cm;
+}
+.mobile-container .main-section .events-container .event-card {
+  background-color: #F3F2ED;
+  width: 49%;
+  color: #101010;
+  font-family: "NetflixSans-Regular", sans-serif;
+  padding: 0.3cm 0.2cm;
+  border-radius: 10px;
+  border-left: 3px solid #E50914;
+}
+.mobile-container .main-section .events-container .event-card .event-title {
+  font-weight: bolder;
+  font-size: 14px;
+}
+.mobile-container .main-section .events-container .event-card .event-table {
+  font-size: 10px;
+}
+.mobile-container .main-section .events-container .place-card {
+  background-color: #F3F2ED;
+  width: 100%;
+  color: #101010;
+  font-family: "NetflixSans-Regular", sans-serif;
+  padding: 0.3cm 0.2cm;
+  border-radius: 10px;
+  border-left: 3px solid #E50914;
+  font-size: 14px;
+  margin-top: 0.5cm;
+}
+.mobile-container .main-section .events-container .place-card .place-title {
+  font-weight: bolder;
+}
+.mobile-container .main-section .events-container .place-card .map-link {
+  background-color: #E50914;
+  padding: 0.2cm 1cm;
+  color: #F3F2ED;
+  text-decoration: none;
+  border-radius: 5px;
+}
+.mobile-container .main-section .prayer-section {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  color: #F3F2ED;
+  text-align: center;
+  font-family: "NetflixSans-Regular", sans-serif;
+  font-weight: bold;
+  margin-top: 2cm;
+}
+.mobile-container .main-section .prayer-section .prayer-author {
+  margin-top: 0.5cm;
+}
+.mobile-container .wallet-section {
+  max-width: 95%;
+  overflow: hidden Im !important;
+  display: flex;
+  margin-top: 2cm;
+  margin-bottom: 2cm;
+  background-color: hsl(0, 0%, 6%);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+}
+.mobile-container .wallet-section .wallet-vertical {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1cm 0;
+  background-color: #E50914;
+}
+.mobile-container .wallet-section .wallet-vertical .wallet-letter {
+  font-family: "NetflixSans-Bold", sans-serif;
+  font-size: 24px;
+  color: #F3F2ED;
+  font-weight: bolder;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  animation: pulse 2s infinite alternate;
+  margin-top: 0.5cm;
+  padding: 0.2cm;
+}
+.mobile-container .wallet-section .payment-options {
+  flex: 1;
+  padding: 0.5cm;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5cm;
+  width: 100%;
+}
+.mobile-container .wallet-section .payment-options h3 {
+  width: 100%;
+  font-family: "NetflixSans-Bold", sans-serif;
+  font-size: 18px;
+  color: #E50914;
+  margin-bottom: 0.5cm;
+  text-align: center;
+  border-bottom: 2px solid #E50914;
+  padding-bottom: 0.3cm;
+}
+.mobile-container .wallet-section .payment-options .qr-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.3cm;
+  width: 100%;
+}
+.mobile-container .wallet-section .payment-options .qr-container .qr-item {
+  background-color: #F3F2ED;
+  padding: 0.2cm;
+  border-radius: 10px;
+  width: 100%;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.mobile-container .wallet-section .payment-options .qr-container .qr-item:hover {
+  transform: translateY(-5px);
+}
+.mobile-container .wallet-section .payment-options .qr-container .qr-item .qr-image {
+  width: 100%;
+  margin-bottom: 0.5cm;
+  border: 2px solid #E50914;
+  border-radius: 5px;
+}
+.mobile-container .wallet-section .payment-options .qr-container .qr-item .bank-info {
+  font-family: "NetflixSans-Regular", sans-serif;
+  font-size: 14px;
+  color: #101010;
+  text-align: center;
+  font-weight: bold;
+}
+.mobile-container .wallet-section .payment-options .bank-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1cm;
+  font-family: "NetflixSans-Regular", sans-serif;
+}
+.mobile-container .wallet-section .payment-options .bank-container .bank-item {
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  padding: 1cm;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+.mobile-container .wallet-section .payment-options .bank-container .bank-item:hover {
+  transform: translateY(-5px);
+}
+.mobile-container .wallet-section .payment-options .bank-container .bank-item .bank-name {
+  position: absolute;
+  top: 1cm;
+  right: 1cm;
+  font-size: 16px;
+  font-weight: bold;
+  color: #101010;
+}
+.mobile-container .wallet-section .payment-options .bank-container .bank-item .bank-pin {
+  width: 40px;
+  margin-top: 20px;
+}
+.mobile-container .wallet-section .payment-options .bank-container .bank-item .account-name,
+.mobile-container .wallet-section .payment-options .bank-container .bank-item .bank-number {
+  font-size: 14px;
+  font-weight: bold;
+  color: #101010;
+  margin-top: 0.1cm;
+}
+.mobile-container .wallet-section .payment-options .bank-container .bank-item .account-name {
+  margin-top: 0.3cm;
+}
+.mobile-container .wallet-section .payment-options .bank-container .bank-item .copy-btn {
+  position: absolute;
+  bottom: 0.5cm;
+  right: 0.5cm;
+  padding: 5px 10px;
+  background-color: #101010;
+  color: #f7f7f7;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.mobile-container .wallet-section .payment-options .bank-container .bank-item .copy-btn img {
+  width: 15px;
+  margin-left: 0.2cm;
+}
+.mobile-container .wallet-section .payment-options .bank-container .bank-item .copy-btn:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+.mobile-container .form-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 2cm;
+  background-color: #000000;
+}
+.mobile-container .form-section .response-form {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.mobile-container .form-section .response-form .form-title {
+  font-family: "NetflixSans-Regular", sans-serif;
+  font-weight: bolder;
+  font-size: 20px;
+  color: #F3F2ED;
+  margin-top: 1cm;
+  align-self: start;
+}
+.mobile-container .form-section .response-form .form-input,
+.mobile-container .form-section .response-form .form-select {
+  width: 100%;
+  color: #8C8C8C;
+  border: none;
+  outline: none;
+  height: 1.5cm;
+  margin-top: 1cm;
+  padding-left: 0.5cm;
+  font-weight: bolder;
+  font-size: 16px;
+  text-align: left;
+}
+.mobile-container .form-section .response-form .form-textarea {
+  width: 100%;
+  background-color: #333333;
+  color: #8C8C8C;
+  border: none;
+  outline: none;
+  height: 5cm;
+  margin-top: 1cm;
+  padding-left: 0.5cm;
+  font-family: "NetflixSans-Regular", sans-serif;
+  font-weight: bolder;
+  font-size: 16px;
+  padding-top: 0.5cm;
+  resize: none;
+}
+.mobile-container .form-section .response-form .form-button {
+  width: 100%;
+  height: 1.5cm;
+  background-color: #E50914;
+  color: #F3F2ED;
+  border: none;
+  outline: none;
+  margin-top: 1cm;
+  font-family: "NetflixSans-Regular", sans-serif;
+  font-weight: bolder;
+  font-size: 16px;
+}
+.mobile-container .form-section .thanks-message {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 2cm;
+  padding-bottom: 2cm;
+}
+.mobile-container .form-section .thanks-message .thanks-text {
+  font-family: "NetflixSans-Regular", sans-serif;
+  font-size: 17px;
+  color: #8C8C8C;
+}
+.mobile-container .form-section .thanks-message .thanks-author {
+  margin-top: 1cm;
+  color: #8C8C8C;
+}
+.mobile-container .form-section .thanks-message .thanks-author .couple-names {
+  color: #F3F2ED;
+  font-weight: bolder;
+}
+
+.action-button {
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s;
+  animation: shine 3s infinite;
+}
+.action-button:active {
+  transform: scale(0.95);
+}
+@keyframes shine {
+  0% {
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+    transform: scale(1);
+  }
+  10% {
+    box-shadow: 0 0 18px rgba(255, 20, 20, 0.55);
+    transform: scale(1.005);
+  }
+  20% {
+    box-shadow: 0 0 21px rgba(255, 40, 40, 0.6);
+    transform: scale(1.01);
+  }
+  30% {
+    box-shadow: 0 0 24px rgba(255, 60, 60, 0.65);
+    transform: scale(1.015);
+  }
+  40% {
+    box-shadow: 0 0 27px rgba(255, 80, 80, 0.7);
+    transform: scale(1.02);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 98, 98, 0.75);
+    transform: scale(1.025);
+  }
+  60% {
+    box-shadow: 0 0 27px rgba(255, 80, 80, 0.7);
+    transform: scale(1.02);
+  }
+  70% {
+    box-shadow: 0 0 24px rgba(255, 60, 60, 0.65);
+    transform: scale(1.015);
+  }
+  80% {
+    box-shadow: 0 0 21px rgba(255, 40, 40, 0.6);
+    transform: scale(1.01);
+  }
+  90% {
+    box-shadow: 0 0 18px rgba(255, 20, 20, 0.55);
+    transform: scale(1.005);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+    transform: scale(1);
+  }
+}
+
+.cover-section.slide-up {
+  animation: slideUpAnimation 3s ease-out forwards;
+}
+
+@keyframes slideUpAnimation {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+    display: none;
+  }
+}
+@media (max-width: 480px) {
+  body {
+    padding: 0;
+  }
+  .mobile-container {
+    max-width: 100%;
+    height: 100vh;
+  }
+}
+.snackbar {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-50%) translateY(100%);
+  }
+  to {
+    transform: translateX(-50%) translateY(0);
+  }
+}/*# sourceMappingURL=styles.css.map */
