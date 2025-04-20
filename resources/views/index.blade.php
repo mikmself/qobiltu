@@ -4,13 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preload" href="/assets/css/styles.css" as="style">
-    <link rel="preload" href="https://res.cloudinary.com/djhl6s1ch/image/upload/v1743915202/cover_resize_tggzcq.jpg" as="image">
-    <link rel="preload" href="/vendor/aos/aos.css" as="style">
-    <link rel="preload" href="/vendor/aos/aos.js" as="script">
+    <link rel="preload" href="./assets/css/styles.css" as="style">
+    <link rel="preload" href="https://res.cloudinary.com/djhl6s1ch/image/upload/v1743915202/cover_resize_tggzcq.jpg"
+          as="image">
+    <link rel="preload" href="./vendor/aos/aos.css" as="style">
+    <link rel="preload" href="./vendor/aos/aos.js" as="script">
 
-    <link rel="stylesheet" href="/assets/css/styles.css">
-    <link rel="stylesheet" href="/vendor/aos/aos.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="./vendor/aos/aos.css">
     <title>Willy & Dhian</title>
 </head>
 
@@ -26,54 +27,55 @@
 
         <div class="details-container">
             <div class="left-details">
-                <img class="detail-image" src="/assets/img/cover/left/top.png" alt="" oncontextmenu="return false;">
-                <img class="detail-image" src="/assets/img/cover/left/bottom.png" alt=""
+                <img class="detail-image" src="./assets/img/cover/left/top.png" alt=""
+                     oncontextmenu="return false;">
+                <img class="detail-image" src="./assets/img/cover/left/bottom.png" alt=""
                      oncontextmenu="return false;">
             </div>
             <div class="center-details">
                 <h2 class="couple-names">WILLY AND DHIAN</h2>
-                <h1 class="wedding-type">WEDDING</h1>
+                <h1 class="wedding-type">UNLIMITED LOVE</h1>
                 <div class="date-display">
-                    <img class="date-icon" src="/assets/img/cover/billion.png" alt="" oncontextmenu="return false;">
-                    <span class="date-text">20,05,2025</span>
+                    <img class="date-icon" src="./assets/img/cover/billion.png" alt=""
+                         oncontextmenu="return false;">
+                    <span class="date-text">20.5.2025</span>
                 </div>
                 <div class="bottom-message">
-                    <p class="invitation-text">MENGUNDANG SAUDARA UNTUK TURUT MERAYAKAN HARI BAHAGIA KAMI YANG
-                        PENUH DENGAN KEBERKAHAN INI</p>
+                    <p class="invitation-text">Join us on a legendary journey to celebrate our wedding!</p>
                 </div>
             </div>
             <div class="right-details">
-                <img class="detail-image" src="/assets/img/cover/right/top.png" alt=""
+                <img class="detail-image" src="./assets/img/cover/right/top.png" alt=""
                      oncontextmenu="return false;">
-                <img class="detail-image" src="/assets/img/cover/right/bottom.png" alt=""
+                <img class="detail-image" src="./assets/img/cover/right/bottom.png" alt=""
                      oncontextmenu="return false;">
             </div>
         </div>
         <h1 class="recipient-name">
-            {{$guest->name}} <br>
-            {{$guest->institute}}
+            M. Irga Khoirul Mahfis <br>
+            Bakaran Project
         </h1>
         <button class="action-button">
-            <img class="button-icon" src="/assets/icons/play-white.png" alt="" oncontextmenu="return false;">
+            <img class="button-icon" src="./assets/icons/play-white.png" alt="" oncontextmenu="return false;">
             <span class="button-text">Let's Sail</span>
         </button>
         <div class="logo-container">
-            <img class="logo-image" src="/assets/img/cover/onepiece.png" alt="" oncontextmenu="return false;">
-            <img class="logo-image" src="/assets/img/cover/marvel.png" alt="" oncontextmenu="return false;">
+            <img class="logo-image" src="./assets/img/cover/onepiece.png" alt="" oncontextmenu="return false;">
+            <img class="logo-image" src="./assets/img/cover/marvel.png" alt="" oncontextmenu="return false;">
         </div>
     </section>
     <section class="main-section">
-        <div class="top-content">
+        <div class="top-content" data-animate data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="250">
             <div class="icon-container">
-                <img class="netflix-logo" src="/assets/img/main/bp.png" aria-checked="netflix-logo" alt=""
+                <img class="netflix-logo" src="./assets/img/main/bp.png" aria-checked="netflix-logo" alt=""
                      oncontextmenu="return false;">
-                <img class="close-button" src="/assets//icons/close.png" alt="" oncontextmenu="return false;">
+                <img class="close-button" src="./assets//icons/close.png" alt="" oncontextmenu="return false;">
             </div>
             <img class="cover-image"
                  src="https://res.cloudinary.com/djhl6s1ch/image/upload/v1743761558/Group_39_1_xespam.png" alt=""
                  oncontextmenu="return false;">
             <div class="other-info">
-                <img class="like-icon" src="/assets/icons/like.png" class="like" alt=""
+                <img class="like-icon" src="./assets/icons/like.png" class="like" alt=""
                      oncontextmenu="return false;">
                 <p class="year-text">2025</p>
                 <p class="rating-text">WD-TV</p>
@@ -81,13 +83,13 @@
             </div>
             <a class="play-button" href="#kesini">
                 <div class="button-split">
-                    <img class="play-icon" src="/assets/icons/play-white.png" class="play" alt=""
+                    <img class="play-icon" src="./assets/icons/play-white.png" class="play" alt=""
                          oncontextmenu="return false;">
                     <span class="button-label">PLAY</span>
                 </div>
             </a>
         </div>
-        <div class="text-content">
+        <div class="text-content" data-animate data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="250">
             <h1 class="episode-title">S1:E1 Yoga Willy Utomo - Dhian Nur Aini</h1>
             <p class="description-text">Dengan penuh rasa syukur kepada Allah SWT, kami mengundang
                 Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu pada acara pernikahan kami. Kehadiran Anda
@@ -99,9 +101,10 @@
             </p>
         </div>
         <div class="slider-container" id="kesini">
-            <p class="slider-title" data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="-300">Popular
+            <p class="slider-title" data-animate data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="250">
+                Popular
             </p>
-            <div class="image-slider" data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="-300">
+            <div class="image-slider" data-animate data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="250">
                 <img class="slider-image"
                      src="https://res.cloudinary.com/djhl6s1ch/image/upload/v1743746563/WhatsApp_Image_2025-03-31_at_7.58.10_PM_kmzyav.jpg"
                      alt="" oncontextmenu="return false;">
@@ -142,9 +145,10 @@
                      src="https://res.cloudinary.com/djhl6s1ch/image/upload/v1743746571/WhatsApp_Image_2025-04-01_at_8.01.01_AM_xeueu7.jpg"
                      alt="" oncontextmenu="return false;">
             </div>
-            <p class="slider-title" data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="-300">Trending
+            <p class="slider-title" data-animate data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="250">
+                Trending
                 Now</p>
-            <div class="image-slider" data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="-300">
+            <div class="image-slider" data-animate data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="250">
                 <img class="slider-image"
                      src="https://res.cloudinary.com/djhl6s1ch/image/upload/v1743747006/47c87170-d6f9-45a1-83a4-b09038eba115_o2752k.png"
                      alt="" oncontextmenu="return false;">
@@ -186,8 +190,8 @@
                      alt="" oncontextmenu="return false;">
             </div>
         </div>
-        <div class="quote-card" data-aos-duration="1000" data-aos-delay="1000" data-aos="zoom-in">
-            <img class="quote-image" src="/assets/img/main/luffy.png" alt="" oncontextmenu="return false;"
+        <div class="quote-card" data-aos-duration="2000" data-aos-delay="250" data-aos="zoom-in">
+            <img class="quote-image" src="./assets/img/main/luffy.png" alt="" oncontextmenu="return false;"
                  srcset="">
             <p class="quote-text">
                 “Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan-pasangan dari
@@ -202,14 +206,14 @@
         <div class="card-container">
             <img class="card-image"
                  src="https://res.cloudinary.com/djhl6s1ch/image/upload/v1743746298/Willy_gm207k.jpg" alt=""
-                 oncontextmenu="return false;" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="1000">
+                 oncontextmenu="return false;" data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="250">
             <img class="card-image"
                  src="https://res.cloudinary.com/djhl6s1ch/image/upload/v1743915139/Dhian_nl9bgj.jpg" alt=""
-                 oncontextmenu="return false;" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="1000">
+                 oncontextmenu="return false;" data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="250">
         </div>
-        <div class="countdown-container" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="1000">
+        <div class="countdown-container" data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="250">
             <div class="left-content">
-                <img class="akad-image" src="/assets/img/main/akad.png" alt="">
+                <img class="akad-image" src="./assets/img/main/akad.png" alt="">
                 <div class="countdown-timer">
                     <div class="timer-item">
                         <p class="timer-number" data-unit="days">00</p>
@@ -230,11 +234,12 @@
                 </div>
             </div>
             <div class="right-content">
-                <img class="thanos-image" src="/assets/img/main/drstrange.png" alt="" oncontextmenu="return false;">
+                <img class="thanos-image" src="./assets/img/main/drstrange.png" alt=""
+                     oncontextmenu="return false;">
             </div>
         </div>
         <div class="events-container">
-            <div class="event-card" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="1000">
+            <div class="event-card" data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="250">
                 <p class="event-title">Akad Nikah</p>
                 <table class="event-table">
                     <tr>
@@ -249,7 +254,7 @@
                     </tr>
                 </table>
             </div>
-            <div class="event-card" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="1000">
+            <div class="event-card" data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="250">
                 <p class="event-title">Tasyakuran</p>
                 <table class="event-table">
                     <tr>
@@ -264,11 +269,11 @@
                     </tr>
                 </table>
             </div>
-            <div class="place-card" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="1000">
+            <div class="place-card" data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="250">
                 <p class="place-title">Tempat</p>
                 <p class="place-description">Kalikajar RT 001/RW 003, Kec. Kaligondang, Kab. Purbalingga.</p>
             </div>
-            <div class="place-card" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="1000">
+            <div class="place-card" data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="250">
                 <p class="place-title">Maps</p>
                 <iframe class="map-iframe"
                         src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3956.800510638605!2d109.373751!3d-7.3762419999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zN8KwMjInMzQuNSJTIDEwOcKwMjInMjUuNSJF!5e0!3m2!1sen!2sid!4v1743928721743!5m2!1sen!2sid"
@@ -277,14 +282,14 @@
                 <a class="map-link" href="https://maps.app.goo.gl/KpqqBLya1pRTiTk57">LINK</a>
             </div>
         </div>
-        <div class="prayer-section" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="1000">
+        <div class="prayer-section" data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="250">
             <p class="prayer-text">“Bagi para tamu yang hadir, kami sangat menghargai kehadiran Anda yang turut
                 menyaksikan kebahagiaan kami. Semoga doa dan restu Anda menjadi berkah yang tak terhingga bagi
                 perjalanan hidup kami.”</p>
             <p class="prayer-author">- Willy & Dhian -</p>
         </div>
         <div class="wallet-section">
-            <div class="wallet-vertical" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="1000">
+            <div class="wallet-vertical" data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="250">
                 <div class="wallet-letter">W</div>
                 <div class="wallet-letter">A</div>
                 <div class="wallet-letter">L</div>
@@ -292,7 +297,7 @@
                 <div class="wallet-letter">E</div>
                 <div class="wallet-letter">T</div>
             </div>
-            <div class="payment-options" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="1000">
+            <div class="payment-options" data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="250">
                 <div class="qr-section">
                     <h3>QR Code</h3>
                     <div class="qr-container">
@@ -316,37 +321,36 @@
                         <div class="bank-item"
                              style="background-image: url('https://res.cloudinary.com/djhl6s1ch/image/upload/v1743761126/Background-atm-invitren_uumvpc.jpg');">
                             <p class="bank-name">BRI</p>
-                            <img class="bank-pin" src="/assets/icons/chip.svg" alt="PIN Icon">
+                            <img class="bank-pin" src="./assets/icons/chip.svg" alt="PIN Icon">
                             <p class="account-name">An. Dhian Nur Aini</p>
                             <p class="bank-number" id="bri-number">372401021630532</p>
                             <button class="copy-btn" onclick="copyToClipboard('bri-number')">Salin <img
-                                    src="/assets/icons/copy-icon.png" alt=""></button>
+                                    src="./assets/icons/copy-icon.png" alt=""></button>
                         </div>
                         <div class="bank-item"
                              style="background-image: url('https://res.cloudinary.com/djhl6s1ch/image/upload/v1743761126/Background-atm-invitren_uumvpc.jpg');">
                             <p class="bank-name">BCA</p>
-                            <img class="bank-pin" src="/assets/icons/chip.svg" alt="PIN Icon">
+                            <img class="bank-pin" src="./assets/icons/chip.svg" alt="PIN Icon">
                             <p class="account-name">An. Yoga Willy Utomo</p>
                             <p class="bank-number" id="bca-number">3580557651</p>
                             <button class="copy-btn" onclick="copyToClipboard('bca-number')">Salin <img
-                                    src="/assets/icons/copy-icon.png" alt=""></button>
+                                    src="./assets/icons/copy-icon.png" alt=""></button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="form-section" data-aos-duration="1000" data-aos-delay="1000" data-aos="zoom-in" data-aos-anchor-placement="top-bottom">
-            <form class="response-form" action="{{route('store-message')}}" method="POST">
-                @csrf
-                <input type="hidden" name="username" value="{{$guest->username}}">
+        <div class="form-section" data-aos-duration="2000" data-aos-delay="250" data-aos="zoom-in"
+             data-aos-anchor-placement="top-bottom">
+            <form class="response-form">
                 <p class="form-title">Form</p>
-                <input class="form-input" type="text" name="name" placeholder="Nama" id="" value="{{$guest->name}}" disabled>
-                <select class="form-select" name="attendance" id="" required>
+                <input class="form-input" type="text" name="name" placeholder="Nama" id="">
+                <select class="form-select" name="" id="">
                     <option value="" disabled selected>Will You Board the Sunny?</option>
-                    <option value="I Bring Sake for the Crew!">I Bring Sake for the Crew!</option>
-                    <option value="My Heart Belongs to the Sea<">My Heart Belongs to the Sea</option>
+                    <option value="">I Bring Sake for the Crew!</option>
+                    <option value="">My Heart Belongs to the Sea</option>
                 </select>
-                <textarea class="form-textarea" name="message" id="" placeholder="Ucapan" required></textarea>
+                <textarea class="form-textarea" name="" id="" placeholder="Ucapan"></textarea>
                 <button class="form-button" type="submit">Submit</button>
             </form>
             <div class="thanks-message">
@@ -358,62 +362,11 @@
         </div>
     </section>
 </div>
-<script src="/vendor/aos/aos.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script>
-    AOS.init();
-    document.addEventListener('DOMContentLoaded', function() {
-        const form = document.querySelector('.response-form');
 
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
-            const formData = new FormData(form);
-            fetch(form.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'X-Requested-With': 'XMLHttpRequest',
-                    'X-CSRF-TOKEN': formData.get('_token')
-                }
-            })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        sessionStorage.setItem('success', data.success);
-                        window.location.reload();
-                    } else if (data.error) {
-                        Swal.fire({
-                            title: 'Failed!',
-                            text: data.error,
-                            icon: 'error',
-                            confirmButtonText: 'OK'
-                        });
-                    }
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    Swal.fire({
-                        title: 'Error!',
-                        text: 'Terjadi kesalahan saat mengirim pesan.',
-                        icon: 'error',
-                        confirmButtonText: 'OK'
-                    });
-                });
-        });
-        const successMessage = sessionStorage.getItem('success');
-        if (successMessage) {
-            Swal.fire({
-                title: 'Success!',
-                text: successMessage,
-                icon: 'success',
-                timer: 1500,
-                confirmButtonText: 'OK'
-            });
-            sessionStorage.removeItem('success');
-        }
-    });
-</script>
-<script src="/assets/js/script.js"></script>
+<audio id="bg-audio" src="./assets/audio/wdaudio.mp3"></audio>
+
+<script src="./vendor/aos/aos.js"></script>
+<script src="./assets/js/script.js"></script>
 </body>
 
 </html>
