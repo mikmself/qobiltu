@@ -13,5 +13,6 @@ class Guest extends Model
         'name',
         'username',
         'institute',
+        'phone',
     ];
 }

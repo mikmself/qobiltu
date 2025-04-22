@@ -24,10 +24,9 @@ class ListGuests extends ListRecords
                 ->fields([
                     ImportField::make('name')
                         ->required(),
-                    ImportField::make('username')
-                        ->required(),
-                    ImportField::make('institute')
-                        ->required(),
+                    ImportField::make('username'),
+                    ImportField::make('institute'),
+                    ImportField::make('phone'),
                 ]),
             ExportAction::make()
                 ->exports([

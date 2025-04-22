@@ -32,6 +32,9 @@ class GuestResource extends Resource
                 Forms\Components\TextInput::make('institute')
                     ->maxLength(255)
                     ->default(null),
+                Forms\Components\TextInput::make('phone')
+                    ->maxLength(255)
+                    ->default(null),
             ]);
     }
 
@@ -44,6 +47,8 @@ class GuestResource extends Resource
                 Tables\Columns\TextColumn::make('username')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('institute')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('phone')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
