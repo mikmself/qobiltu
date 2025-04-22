@@ -16,6 +16,7 @@
 </head>
 
 <body>
+<audio src="/assets/music/bg.mpeg" style="display: none;" autoplay></audio>
 <div class="mobile-container">
     <section class="cover-section">
         <h1 class="invitation-title">INVITE YOU</h1>
@@ -56,7 +57,7 @@
             Bakaran Project
         </h1>
         <button class="action-button">
-            <img class="button-icon" src="./assets/icons/play-white.png" alt="" oncontextmenu="return false;">
+            <img class="button-icon" src="./assets/icons/play.png" alt="" oncontextmenu="return false;">
             <span class="button-text">Let's Sail</span>
         </button>
         <div class="logo-container">
@@ -81,13 +82,13 @@
                 <p class="rating-text">WD-TV</p>
                 <p class="season-text">1 Season</p>
             </div>
-            <a class="play-button" href="#kesini">
+            <button class="play-button">
                 <div class="button-split">
-                    <img class="play-icon" src="./assets/icons/play-white.png" class="play" alt=""
+                    <img class="play-icon" src="./assets/icons/pause.png" class="play" alt=""
                          oncontextmenu="return false;">
-                    <span class="button-label">PLAY</span>
+                    <span class="button-label">PAUSE</span>
                 </div>
-            </a>
+            </button>
         </div>
         <div class="text-content" data-animate data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="250">
             <h1 class="episode-title">S1:E1 Yoga Willy Utomo - Dhian Nur Aini</h1>

@@ -1,22 +1,17 @@
-
-
 document.addEventListener('DOMContentLoaded', function () {
     AOS.init({
         duration: 1200,
-        // once: true,
     });
     const coverSection = document.querySelector('.cover-section');
     const mainSection = document.querySelector('.main-section');
     const actionButton = document.querySelector('.action-button');
     const mainImage = document.querySelector('.main-image');
     const playButton = document.querySelector('.play-button');
-    const bgAudio = document.getElementById('bg-audio');
 
     const toggleAudioBtn = document.getElementById('toggle-audio');
 
     mainImage.classList.add('initial-state');
     document.body.style.backgroundColor = '';
-    // playButton.style.display = 'none';
     document.body.style.overflow = 'hidden';
 
     setTimeout(() => {
@@ -32,16 +27,6 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }, 200);
     }, 100);
-
-    // toggleAudioBtn.addEventListener('click', () => {
-    //     if (bgAudio.paused) {
-    //         bgAudio.play();
-    //     } else {
-    //         bgAudio.pause();
-    //     }
-    // });
-
-
     actionButton.addEventListener('click', function () {
 
         bgAudio.play().catch(() => {
@@ -59,6 +44,25 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 700);
     });
 
+
+    const playMusic = document.querySelector('.play-button');
+    const playIcon = playMusic.querySelector('.play-icon');
+    const bgAudio = document.querySelector('audio[src="/assets/music/bg.mpeg"]');
+    let isPlaying = true;
+
+    playMusic.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default anchor behavior
+        if (isPlaying) {
+            bgAudio.pause();
+            playIcon.src = './assets/icons/play.png';
+            playButton.querySelector('.button-label').textContent = 'PLAY';
+        } else {
+            bgAudio.play();
+            playIcon.src = './assets/icons/pause.png';
+            playButton.querySelector('.button-label').textContent = 'PAUSE';
+        }
+        isPlaying = !isPlaying;
+    });
 });
 
 const weddingDate = new Date('2025-05-20T09:00:00').getTime();
@@ -79,15 +83,6 @@ const countdown = setInterval(function () {
         document.querySelector('.timer-number[data-unit="minutes"]').textContent = minutes;
         document.querySelector('.timer-number[data-unit="seconds"]').textContent = seconds;
     }
-
-    // document.querySelector('.timer-number[data-unit="days"]').textContent = days;
-    // document.querySelector('.timer-number[data-unit="hours"]').textContent = hours;
-    // document.querySelector('.timer-number[data-unit="minutes"]').textContent = minutes;
-    // document.querySelector('.timer-number[data-unit="seconds"]').textContent = seconds;
-    // if (distance < 0) {
-    //     clearInterval(countdown);
-    //     document.querySelector('.countdown-timer').innerHTML = 'WEDDING DAY!, CONGRATULATIONS!';
-    // }
 }, 1000);
 
 function copyToClipboard(id) {
@@ -140,24 +135,4 @@ document.addEventListener('DOMContentLoaded', function () {
     setTimeout(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }, 100);
-
-    //   actionButton.addEventListener('click', function () {
-    //     coverSection.classList.add('slide-up');
-    //     document.body.style.overflow = '';
-
-    //     setTimeout(() => {
-    //       coverSection.style.zIndex = 0;
-    //       mainSection.classList.add('show');
-
-    //       // Delay untuk memastikan elemen sudah muncul
-    //       setTimeout(() => {
-    //         document.querySelectorAll('[data-animate]').forEach((el, i) => {
-    //           setTimeout(() => {
-    //             el.classList.add('show');
-    //           }, i * 150);
-    //         });
-    //         AOS.refresh();
-    //       }, 300);
-    //     }, 1000);
-    //   });
 });
