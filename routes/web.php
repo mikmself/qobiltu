@@ -7,5 +7,5 @@ Route::post('/store-message',[\App\Http\Controllers\HomeController::class,'store
 
 // Handle not found routes
 Route::fallback(function () {
-    return redirect()->route('not-found')->with('error', 'Halaman tidak ditemukan');
+    return view('not-found');
 });

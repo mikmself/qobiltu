@@ -53,7 +53,7 @@
             </div>
         </div>
         <h1 class="recipient-name">
-            {{$$guest->name}} <br>
+            {{$guest->name}} <br>
             {{$guest->institute}}
         </h1>
         <button class="action-button">
