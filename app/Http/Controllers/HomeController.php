@@ -15,7 +15,7 @@ class HomeController extends Controller
         try {
             $guest = Guest::where('username', $username)->first();
             if (!$guest) {
-                return redirect()->route('error')->with('error', 'User not found');
+                return redirect('/')->with('error', 'User not found');
             }
             return view('index', compact('guest'));
         } catch (\Exception $e) {
