@@ -751,7 +751,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background-image: url("../img/cover/background.png");
+    background-image: url("/assets/img/cover/background.png");
     background-size: cover;
     filter: brightness(80%);
     overflow: none;
@@ -847,7 +847,7 @@ body {
     font-weight: light;
     letter-spacing: 2px;
     font-size: 25px;
-    background-image: url("../img/cover/background.png");
+    background-image: url("/assets/img/cover/background.png");
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
@@ -859,7 +859,7 @@ body {
     font-family: "Playfair Display", serif;
     font-size: 18px;
     color: #2B1B03;
-    background-image: url("../img/cover/background.png");
+    background-image: url("/assets/img/cover/background.png");
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
@@ -876,7 +876,7 @@ body {
     font-family: "Always In My Heart", cursive;
     font-size: 40px;
     color: #2B1B03;
-    background-image: url("../img/cover/background.png");
+    background-image: url("/assets/img/cover/background.png");
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
@@ -1014,7 +1014,7 @@ body {
     align-items: center;
     width: 100%;
     height: 11cm;
-    background-image: url("../img/main/background.png");
+    background-image: url("/assets/img/main/background.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

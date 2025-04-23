@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preload" href="./assets/css/styles.css" as="style">
+    <link rel="preload" href="/assets/css/styles.css" as="style">
     <link rel="preload" href="https://res.cloudinary.com/djhl6s1ch/image/upload/v1743915202/cover_resize_tggzcq.jpg"
           as="image">
-    <link rel="preload" href="./vendor/aos/aos.css" as="style">
-    <link rel="preload" href="./vendor/aos/aos.js" as="script">
+    <link rel="preload" href="/vendor/aos/aos.css" as="style">
+    <link rel="preload" href="/vendor/aos/aos.js" as="script">
 
-    <link rel="stylesheet" href="./assets/css/styles.css">
-    <link rel="stylesheet" href="./vendor/aos/aos.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/vendor/aos/aos.css">
     <title>Willy & Dhian</title>
 </head>
 
@@ -28,16 +28,16 @@
 
         <div class="details-container">
             <div class="left-details">
-                <img class="detail-image" src="./assets/img/cover/left/top.png" alt=""
+                <img class="detail-image" src="/assets/img/cover/left/top.png" alt=""
                      oncontextmenu="return false;">
-                <img class="detail-image" src="./assets/img/cover/left/bottom.png" alt=""
+                <img class="detail-image" src="/assets/img/cover/left/bottom.png" alt=""
                      oncontextmenu="return false;">
             </div>
             <div class="center-details">
                 <h2 class="couple-names">WILLY AND DHIAN</h2>
                 <h1 class="wedding-type">UNLIMITED LOVE</h1>
                 <div class="date-display">
-                    <img class="date-icon" src="./assets/img/cover/billion.png" alt=""
+                    <img class="date-icon" src="/assets/img/cover/billion.png" alt=""
                          oncontextmenu="return false;">
                     <span class="date-text">20.5.2025</span>
                 </div>
@@ -46,37 +46,37 @@
                 </div>
             </div>
             <div class="right-details">
-                <img class="detail-image" src="./assets/img/cover/right/top.png" alt=""
+                <img class="detail-image" src="/assets/img/cover/right/top.png" alt=""
                      oncontextmenu="return false;">
-                <img class="detail-image" src="./assets/img/cover/right/bottom.png" alt=""
+                <img class="detail-image" src="/assets/img/cover/right/bottom.png" alt=""
                      oncontextmenu="return false;">
             </div>
         </div>
         <h1 class="recipient-name">
-            M. Irga Khoirul Mahfis <br>
-            Bakaran Project
+            {{$$guest->name}} <br>
+            {{$guest->institute}}
         </h1>
         <button class="action-button">
-            <img class="button-icon" src="./assets/icons/play.png" alt="" oncontextmenu="return false;">
+            <img class="button-icon" src="/assets/icons/play.png" alt="" oncontextmenu="return false;">
             <span class="button-text">Let's Sail</span>
         </button>
         <div class="logo-container">
-            <img class="logo-image" src="./assets/img/cover/onepiece.png" alt="" oncontextmenu="return false;">
-            <img class="logo-image" src="./assets/img/cover/marvel.png" alt="" oncontextmenu="return false;">
+            <img class="logo-image" src="/assets/img/cover/onepiece.png" alt="" oncontextmenu="return false;">
+            <img class="logo-image" src="/assets/img/cover/marvel.png" alt="" oncontextmenu="return false;">
         </div>
     </section>
     <section class="main-section">
         <div class="top-content" data-animate data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="250">
             <div class="icon-container">
-                <img class="netflix-logo" src="./assets/img/main/bp.png" aria-checked="netflix-logo" alt=""
+                <img class="netflix-logo" src="/assets/img/main/bp.png" aria-checked="netflix-logo" alt=""
                      oncontextmenu="return false;">
-                <img class="close-button" src="./assets//icons/close.png" alt="" oncontextmenu="return false;">
+                <img class="close-button" src="/assets//icons/close.png" alt="" oncontextmenu="return false;">
             </div>
             <img class="cover-image"
                  src="https://res.cloudinary.com/djhl6s1ch/image/upload/v1743761558/Group_39_1_xespam.png" alt=""
                  oncontextmenu="return false;">
             <div class="other-info">
-                <img class="like-icon" src="./assets/icons/like.png" class="like" alt=""
+                <img class="like-icon" src="/assets/icons/like.png" class="like" alt=""
                      oncontextmenu="return false;">
                 <p class="year-text">2025</p>
                 <p class="rating-text">WD-TV</p>
@@ -84,7 +84,7 @@
             </div>
             <button class="play-button">
                 <div class="button-split">
-                    <img class="play-icon" src="./assets/icons/pause.png" class="play" alt=""
+                    <img class="play-icon" src="/assets/icons/pause.png" class="play" alt=""
                          oncontextmenu="return false;">
                     <span class="button-label">PAUSE</span>
                 </div>
@@ -192,7 +192,7 @@
             </div>
         </div>
         <div class="quote-card" data-aos-duration="2000" data-aos-delay="250" data-aos="zoom-in">
-            <img class="quote-image" src="./assets/img/main/luffy.png" alt="" oncontextmenu="return false;"
+            <img class="quote-image" src="/assets/img/main/luffy.png" alt="" oncontextmenu="return false;"
                  srcset="">
             <p class="quote-text">
                 “Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan-pasangan dari
@@ -214,7 +214,7 @@
         </div>
         <div class="countdown-container" data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="250">
             <div class="left-content">
-                <img class="akad-image" src="./assets/img/main/akad.png" alt="">
+                <img class="akad-image" src="/assets/img/main/akad.png" alt="">
                 <div class="countdown-timer">
                     <div class="timer-item">
                         <p class="timer-number" data-unit="days">00</p>
@@ -235,7 +235,7 @@
                 </div>
             </div>
             <div class="right-content">
-                <img class="thanos-image" src="./assets/img/main/drstrange.png" alt=""
+                <img class="thanos-image" src="/assets/img/main/drstrange.png" alt=""
                      oncontextmenu="return false;">
             </div>
         </div>
@@ -322,20 +322,20 @@
                         <div class="bank-item"
                              style="background-image: url('https://res.cloudinary.com/djhl6s1ch/image/upload/v1743761126/Background-atm-invitren_uumvpc.jpg');">
                             <p class="bank-name">BRI</p>
-                            <img class="bank-pin" src="./assets/icons/chip.svg" alt="PIN Icon">
+                            <img class="bank-pin" src="/assets/icons/chip.svg" alt="PIN Icon">
                             <p class="account-name">An. Dhian Nur Aini</p>
                             <p class="bank-number" id="bri-number">372401021630532</p>
                             <button class="copy-btn" onclick="copyToClipboard('bri-number')">Salin <img
-                                    src="./assets/icons/copy-icon.png" alt=""></button>
+                                    src="/assets/icons/copy-icon.png" alt=""></button>
                         </div>
                         <div class="bank-item"
                              style="background-image: url('https://res.cloudinary.com/djhl6s1ch/image/upload/v1743761126/Background-atm-invitren_uumvpc.jpg');">
                             <p class="bank-name">BCA</p>
-                            <img class="bank-pin" src="./assets/icons/chip.svg" alt="PIN Icon">
+                            <img class="bank-pin" src="/assets/icons/chip.svg" alt="PIN Icon">
                             <p class="account-name">An. Yoga Willy Utomo</p>
                             <p class="bank-number" id="bca-number">3580557651</p>
                             <button class="copy-btn" onclick="copyToClipboard('bca-number')">Salin <img
-                                    src="./assets/icons/copy-icon.png" alt=""></button>
+                                    src="/assets/icons/copy-icon.png" alt=""></button>
                         </div>
                     </div>
                 </div>
@@ -363,8 +363,8 @@
         </div>
     </section>
 </div>
-<script src="./vendor/aos/aos.js"></script>
-<script src="./assets/js/script.js"></script>
+<script src="/vendor/aos/aos.js"></script>
+<script src="/assets/js/script.js"></script>
 </body>
 
 </html>

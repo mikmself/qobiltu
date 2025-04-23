@@ -68,11 +68,11 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault();
         if (isPlaying) {
             bgAudio.pause();
-            playIcon.src = './assets/icons/play.png';
+            playIcon.src = '/assets/icons/play.png';
             playButton.querySelector('.button-label').textContent = 'PLAY';
         } else {
             bgAudio.play();
-            playIcon.src = './assets/icons/pause.png';
+            playIcon.src = '/assets/icons/pause.png';
             playButton.querySelector('.button-label').textContent = 'PAUSE';
         }
         isPlaying = !isPlaying;
@@ -140,7 +140,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             .scrollIntoView({ behavior: 'smooth' });
     });
 });
-
 
 
 document.addEventListener('DOMContentLoaded', function () {
