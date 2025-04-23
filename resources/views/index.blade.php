@@ -16,7 +16,7 @@
 </head>
 
 <body>
-<audio src="/assets/music/bg.mpeg" style="display: none;" autoplay></audio>
+
 <div class="mobile-container">
     <section class="cover-section">
         <h1 class="invitation-title">INVITE YOU</h1>
@@ -363,9 +363,6 @@
         </div>
     </section>
 </div>
-
-<audio id="bg-audio" src="./assets/audio/wdaudio.mp3"></audio>
-
 <script src="./vendor/aos/aos.js"></script>
 <script src="./assets/js/script.js"></script>
 </body>

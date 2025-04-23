@@ -7,8 +7,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const actionButton = document.querySelector('.action-button');
     const mainImage = document.querySelector('.main-image');
     const playButton = document.querySelector('.play-button');
-
-    const toggleAudioBtn = document.getElementById('toggle-audio');
+    const bgAudio = new Audio('/assets/music/bg.mp3');
+    bgAudio.loop = true
+    const playMusic = document.querySelector('.play-button');
+    const playIcon = playMusic.querySelector('.play-icon');
 
     mainImage.classList.add('initial-state');
     document.body.style.backgroundColor = '';
@@ -27,10 +29,25 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }, 200);
     }, 100);
+
+
+    document.body.addEventListener('click', playAudioOnce, { once: true });
+
+    function playAudioOnce() {
+        bgAudio.play()
+            .then(() => {
+                console.log("Audio berhasil diputar");
+
+            })
+            .catch(err => {
+                console.error("Gagal memutar audio:", err);
+            });
+    }
+
     actionButton.addEventListener('click', function () {
 
-        bgAudio.play().catch(() => {
-            console.log("Audio autoplay dicegah oleh browser");
+        bgAudio.play().catch(err => {
+            console.warn("Audio gagal diputar :", err);
         });
 
         coverSection.classList.add('slide-up');
@@ -45,13 +62,10 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
-    const playMusic = document.querySelector('.play-button');
-    const playIcon = playMusic.querySelector('.play-icon');
-    const bgAudio = document.querySelector('audio[src="/assets/music/bg.mpeg"]');
     let isPlaying = true;
 
-    playMusic.addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent the default anchor behavior
+    playMusic.addEventListener('click', function (event) {
+        event.preventDefault();
         if (isPlaying) {
             bgAudio.pause();
             playIcon.src = './assets/icons/play.png';
