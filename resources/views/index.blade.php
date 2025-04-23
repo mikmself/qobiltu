@@ -343,15 +343,17 @@
         </div>
         <div class="form-section" data-aos-duration="2000" data-aos-delay="250" data-aos="zoom-in"
              data-aos-anchor-placement="top-bottom">
-            <form class="response-form">
+            <form class="response-form" action="{{route('store-message')}}" method="POST">
+                @csrf
+                <input type="hidden" name="username" value="{{$guest->username}}">
                 <p class="form-title">Form</p>
-                <input class="form-input" type="text" name="name" placeholder="Nama" id="">
-                <select class="form-select" name="" id="">
+                <input class="form-input" type="text" name="name" placeholder="Nama" id="" value="{{$guest->name}}" disabled>
+                <select class="form-select" name="attendance" id="" required>
                     <option value="" disabled selected>Will You Board the Sunny?</option>
-                    <option value="">I Bring Sake for the Crew!</option>
-                    <option value="">My Heart Belongs to the Sea</option>
+                    <option value="I Bring Sake for the Crew!">I Bring Sake for the Crew!</option>
+                    <option value="My Heart Belongs to the Sea<">My Heart Belongs to the Sea</option>
                 </select>
-                <textarea class="form-textarea" name="" id="" placeholder="Ucapan"></textarea>
+                <textarea class="form-textarea" name="message" id="" placeholder="Ucapan" required></textarea>
                 <button class="form-button" type="submit">Submit</button>
             </form>
             <div class="thanks-message">
@@ -365,6 +367,55 @@
 </div>
 <script src="/vendor/aos/aos.js"></script>
 <script src="/assets/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.querySelector('.response-form');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(form);
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'X-CSRF-TOKEN': formData.get('_token')
+                }
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Tampilkan SweetAlert dan reset form (jika perlu)
+                        Swal.fire({
+                            title: 'Success!',
+                            text: data.success,
+                            icon: 'success',
+                            confirmButtonText: 'OK'
+                        }).then(() => {
+                            form.reset(); // Reset form setelah OK diklik (opsional)
+                        });
+                    } else if (data.error) {
+                        Swal.fire({
+                            title: 'Failed!',
+                            text: data.error,
+                            icon: 'error',
+                            confirmButtonText: 'OK'
+                        });
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    Swal.fire({
+                        title: 'Error!',
+                        text: 'Terjadi kesalahan saat mengirim pesan.',
+                        icon: 'error',
+                        confirmButtonText: 'OK'
+                    });
+                });
+        });
+    });
+</script>
 </body>
 
 </html>

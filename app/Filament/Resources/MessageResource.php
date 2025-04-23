@@ -44,6 +44,8 @@ class MessageResource extends Resource
                     ->sortable(),
                 Tables\Columns\TextColumn::make('attendance')
                     ->searchable(),
+                Tables\Columns\TextColumn::make('message')
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
