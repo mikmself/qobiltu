@@ -109,6 +109,8 @@
             font-weight: 300;
             margin-top: 5px;
             width: 100%;
+            text-align: left !important;
+            text-align-last: left !important;
         }
     </style>
 </head>
