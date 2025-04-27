@@ -733,13 +733,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 100dvh;
 }
 
 .mobile-container {
     max-width: 375px;
     width: 100%;
-    max-height: 100vh;
+    max-height: 100dvh;
 }
 
 .mobile-container .cover-section {
@@ -1106,8 +1106,6 @@ body {
     font-size: 12px;
     font-weight: 300;
     margin-top: 5px;
-    text-align: justify;
-    text-align-last: justify;
     width: 100%;
 }
 .mobile-container .main-section .text-content .subtitle {
@@ -1710,7 +1708,7 @@ body {
 
     .mobile-container {
         max-width: 100%;
-        height: 100vh;
+        height: 100dvh;
         max-width: 100%;
     }
 }
@@ -1736,7 +1734,7 @@ body {
 
     .mobile-container .cover-section {
         position: relative;
-        min-height: 100vh;
+        min-height: 100dvh;
     }
 
     .details-container .animate {
