@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    // Preload
+    {{--  Perload  --}}
     <link rel="preload" href="/assets/css/styles.css" as="style">
     <link rel="preload" href="/vendor/aos/aos.css" as="style">
     <link rel="preload" href="/vendor/aos/aos.js" as="script">
