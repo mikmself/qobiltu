@@ -14,10 +14,11 @@ class HomeController extends Controller
     {
         try {
             $guest = Guest::where('username', $username)->first();
+            $guestMessages = Message::latest()->get();
             if (!$guest) {
                 return redirect('/')->with('error', 'User not found');
             }
-            return view('index', compact('guest'));
+            return view('index', compact('guest', 'guestMessages'));
         } catch (\Exception $e) {
             Log::error('error: ' . $e->getMessage());
         }
@@ -34,13 +35,20 @@ class HomeController extends Controller
             if (!$guest) {
                 return response()->json(['error' => 'User not found'], 404);
             }
-            Message::create([
+            $newMessage = Message::create([
                 'guest_id' => $guest->id,
                 'message' => $request->message,
                 'attendance' => $request->attendance,
             ]);
             if ($request->ajax()) {
-                return response()->json(['success' => 'Message sent successfully'], 200);
+                return response()->json([
+                    'success' => 'Message sent successfully',
+                    'newMessage' => [
+                        'name' => $guest->name,
+                        'message' => $newMessage->message,
+                        'created_at' => $newMessage->created_at->format('D, d M Y H:i:s') // Tambahkan created_at
+                    ]
+                ], 200);
             }
             return redirect()->back()->with('success', 'Message sent successfully');
 

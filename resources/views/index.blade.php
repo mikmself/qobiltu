@@ -351,6 +351,22 @@
                 </div>
             </div>
         </div>
+        <div class="guest-messages-container" data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="250">
+            <p class="guest-messages-title">Ucapan dari Tamu:</p>
+            <div class="guest-messages-list">
+                @if ($guestMessages->isNotEmpty())
+                    @foreach ($guestMessages as $message)
+                        <div class="guest-message-item">
+                            <p class="guest-name">{{ $message->guest->name }}</p>
+                            <p class="guest-wish">{{ $message->message }}</p>
+                            <p class="message-time">{{ $message->created_at->format('D, d M Y H:i:s') }}</p> <!-- Tambahkan waktu -->
+                        </div>
+                    @endforeach
+                @else
+                    <p class="empty-message">Belum ada ucapan.</p>
+                @endif
+            </div>
+        </div>
         <div class="form-section" data-aos-duration="2000" data-aos-delay="250" data-aos="zoom-in"
              data-aos-anchor-placement="top-bottom">
             <form class="response-form" action="{{route('store-message')}}" method="POST">
@@ -381,6 +397,7 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const form = document.querySelector('.response-form');
+        const messagesList = document.querySelector('.guest-messages-list');
 
         form.addEventListener('submit', function(event) {
             event.preventDefault();
@@ -396,14 +413,33 @@
                 .then(response => response.json())
                 .then(data => {
                     if (data.success) {
-                        // Tampilkan SweetAlert dan reset form (jika perlu)
                         Swal.fire({
                             title: 'Success!',
                             text: data.success,
                             icon: 'success',
                             confirmButtonText: 'OK'
                         }).then(() => {
-                            form.reset(); // Reset form setelah OK diklik (opsional)
+                            form.reset();
+                            if (data.newMessage) {
+                                const emptyMessage = messagesList.querySelector('.empty-message');
+                                if (emptyMessage) {
+                                    emptyMessage.remove();
+                                }
+
+                                const newMessageDiv = document.createElement('div');
+                                newMessageDiv.classList.add('guest-message-item');
+                                newMessageDiv.innerHTML = `
+                            <p class="guest-name">${data.newMessage.name}</p>
+                            <p class="guest-wish">${data.newMessage.message}</p>
+                            <p class="message-time">${data.newMessage.created_at}</p> <!-- Tambahkan waktu -->
+                        `;
+
+                                if (messagesList.firstChild) {
+                                    messagesList.insertBefore(newMessageDiv, messagesList.firstChild);
+                                } else {
+                                    messagesList.appendChild(newMessageDiv);
+                                }
+                            }
                         });
                     } else if (data.error) {
                         Swal.fire({

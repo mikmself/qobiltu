@@ -90,12 +90,28 @@ const countdown = setInterval(function () {
 
     if (distance <= 0) {
         clearInterval(countdown);
-        document.querySelector('.countdown-timer').innerHTML = 'WEDDING DAY!, CONGRATULATIONS!';
+        const countdownTimer = document.querySelector('.countdown-timer');
+        if (countdownTimer) {
+            countdownTimer.innerHTML = 'WEDDING DAY!, CONGRATULATIONS!';
+        }
     } else {
-        document.querySelector('.timer-number[data-unit="days"]').textContent = days;
-        document.querySelector('.timer-number[data-unit="hours"]').textContent = hours;
-        document.querySelector('.timer-number[data-unit="minutes"]').textContent = minutes;
-        document.querySelector('.timer-number[data-unit="seconds"]').textContent = seconds;
+        const daysElement = document.querySelector('.timer-number[data-unit="days"]');
+        const hoursElement = document.querySelector('.timer-number[data-unit="hours"]');
+        const minutesElement = document.querySelector('.timer-number[data-unit="minutes"]');
+        const secondsElement = document.querySelector('.timer-number[data-unit="seconds"]');
+
+        if (daysElement) {
+            daysElement.textContent = days;
+        }
+        if (hoursElement) {
+            hoursElement.textContent = hours;
+        }
+        if (minutesElement) {
+            minutesElement.textContent = minutes;
+        }
+        if (secondsElement) {
+            secondsElement.textContent = seconds;
+        }
     }
 }, 1000);
 
