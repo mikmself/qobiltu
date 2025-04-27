@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     {{--  Perload  --}}
+    <link rel="preload" href="/assets/img/cover/background.png" as="image">
+    <link rel="preload" href="https://res.cloudinary.com/djhl6s1ch/image/upload/v1743915202/cover_resize_tggzcq.jpg" as="image">
     <link rel="preload" href="/assets/css/styles.css" as="style">
     <link rel="preload" href="/vendor/aos/aos.css" as="style">
     <link rel="preload" href="/vendor/aos/aos.js" as="script">
-    <link rel="preload" href="https://res.cloudinary.com/djhl6s1ch/image/upload/v1743915202/cover_resize_tggzcq.jpg" as="image">
     <link rel="preload" href="/assets/img/cover/left/top.png" as="image">
     <link rel="preload" href="/assets/img/cover/left/bottom.png" as="image">
     <link rel="preload" href="/assets/img/cover/right/top.png" as="image">
@@ -18,7 +19,6 @@
     <link rel="preload" href="/assets/icons/play.png" as="image">
     <link rel="preload" href="/assets/img/cover/onepiece.png" as="image">
     <link rel="preload" href="/assets/img/cover/marvel.png" as="image">
-    <link rel="preload" href="/assets/img/cover/background.png" as="image">
 
     <link rel="stylesheet" href="/assets/css/styles.css">
     <link rel="stylesheet" href="/vendor/aos/aos.css">
