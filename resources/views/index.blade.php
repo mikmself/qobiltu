@@ -32,6 +32,7 @@
             padding: 1cm;
             margin-bottom: 1cm;
             color: #F3F2ED;
+            margin-top: 2cm;
             font-family: "NetflixSans-Regular", sans-serif;
         }
 
@@ -432,22 +433,6 @@
                 </div>
             </div>
         </div>
-        <div class="guest-messages-container" data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="250">
-            <p class="guest-messages-title">Ucapan dari Tamu:</p>
-            <div class="guest-messages-list">
-                @if ($guestMessages->isNotEmpty())
-                    @foreach ($guestMessages as $message)
-                        <div class="guest-message-item">
-                            <p class="guest-name">{{ $message->guest->name }}</p>
-                            <p class="guest-wish">{{ $message->message }}</p>
-                            <p class="message-time">{{ $message->created_at->format('D, d M Y H:i:s') }}</p> <!-- Tambahkan waktu -->
-                        </div>
-                    @endforeach
-                @else
-                    <p class="empty-message">Belum ada ucapan.</p>
-                @endif
-            </div>
-        </div>
         <div class="form-section" data-aos-duration="2000" data-aos-delay="250" data-aos="zoom-in"
              data-aos-anchor-placement="top-bottom">
             <form class="response-form" action="{{route('store-message')}}" method="POST">
@@ -463,6 +448,22 @@
                 <textarea class="form-textarea" name="message" id="" placeholder="Ucapan" required></textarea>
                 <button class="form-button" type="submit">Submit</button>
             </form>
+            <div class="guest-messages-container" data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="250">
+                <p class="guest-messages-title">Ucapan dari Tamu:</p>
+                <div class="guest-messages-list">
+                    @if ($guestMessages->isNotEmpty())
+                        @foreach ($guestMessages as $message)
+                            <div class="guest-message-item">
+                                <p class="guest-name">{{ $message->guest->name }}</p>
+                                <p class="guest-wish">{{ $message->message }}</p>
+                                <p class="message-time">{{ $message->created_at->format('D, d M Y H:i:s') }}</p> <!-- Tambahkan waktu -->
+                            </div>
+                        @endforeach
+                    @else
+                        <p class="empty-message">Belum ada ucapan.</p>
+                    @endif
+                </div>
+            </div>
             <div class="thanks-message">
                 <p class="thanks-text">“Terima kasih atas doa dan kehadiran Anda yang telah menambah kebahagiaan
                     kami.
