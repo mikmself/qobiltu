@@ -42,11 +42,11 @@ class HomeController extends Controller
             ]);
             if ($request->ajax()) {
                 return response()->json([
-                    'success' => 'Message sent successfully',
+                    'success' => 'Thank You for your wishes!',
                     'newMessage' => [
                         'name' => $guest->name,
                         'message' => $newMessage->message,
-                        'created_at' => $newMessage->created_at->format('D, d M Y H:i:s') // Tambahkan created_at
+                        'created_at' => $newMessage->created_at->format('D, d M Y H:i:s')
                     ]
                 ], 200);
             }
