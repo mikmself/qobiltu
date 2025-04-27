@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maaf, Halaman Tidak Ditemukan</title>
+    <title>Ups! Nama Tidak Ditemukan</title>
     <style>
         body {
             font-family: sans-serif;
@@ -69,9 +69,9 @@
 </head>
 <body>
 <div class="container">
-    <h1>Maaf, Halaman Tidak Ditemukan</h1>
-    <p>Kami tidak dapat menemukan halaman yang Anda cari. Mungkin alamat yang Anda masukkan salah atau halaman tersebut telah dipindahkan.</p>
-    <a href="/" class="button">Kembali ke Beranda</a>
+    <h1>Ups! Nama Tidak Ditemukan</h1>
+    <p>Maaf, nama yang Anda cari belum terdaftar di sistem undangan kami. Mohon periksa kembali ejaan nama atau hubungi pengundang untuk memastikan.</p>
+    <a href="/" class="button">Kembali</a>
 </div>
 </body>
 </html>
