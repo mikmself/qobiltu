@@ -50,7 +50,7 @@ class HomeController extends Controller
                     ]
                 ], 200);
             }
-            return redirect()->back()->with('success', 'Message sent successfully');
+            return redirect()->back()->with('success', 'Thank You for your wishes!');
 
         } catch (\Exception $e) {
             Log::error('error: ' . $e->getMessage());
