@@ -451,7 +451,7 @@
                 <select class="form-select" name="attendance" id="" required>
                     <option value="" disabled selected>Will You Board the Sunny?</option>
                     <option value="I Bring Sake for the Crew!">I Bring Sake for the Crew!</option>
-                    <option value="My Heart Belongs to the Sea<">My Heart Belongs to the Sea</option>
+                    <option value="My Heart Belongs to the Sea">My Heart Belongs to the Sea</option>
                 </select>
                 <textarea class="form-textarea" name="message" id="" placeholder="Wish" required></textarea>
                 <button class="form-button" type="submit">Submit</button>
