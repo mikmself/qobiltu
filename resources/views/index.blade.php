@@ -104,6 +104,12 @@
             color: #666;
             margin-top: 0.3em;
         }
+        .mobile-container .main-section .text-content .description-text {
+            font-size: 12px;
+            font-weight: 300;
+            margin-top: 5px;
+            width: 100%;
+        }
     </style>
 </head>
 
