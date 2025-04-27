@@ -445,11 +445,11 @@
                     <option value="I Bring Sake for the Crew!">I Bring Sake for the Crew!</option>
                     <option value="My Heart Belongs to the Sea<">My Heart Belongs to the Sea</option>
                 </select>
-                <textarea class="form-textarea" name="message" id="" placeholder="Ucapan" required></textarea>
+                <textarea class="form-textarea" name="message" id="" placeholder="Wish" required></textarea>
                 <button class="form-button" type="submit">Submit</button>
             </form>
             <div class="guest-messages-container" data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="250">
-                <p class="guest-messages-title">Ucapan dari Tamu:</p>
+                <p class="guest-messages-title">Your Wishes:</p>
                 <div class="guest-messages-list">
                     @if ($guestMessages->isNotEmpty())
                         @foreach ($guestMessages as $message)
