@@ -1104,10 +1104,12 @@ body {
 
 .mobile-container .main-section .text-content .description-text {
     font-size: 12px;
-    font-weight: light;
-    margin-top: 0.2cm;
+    font-weight: 300;
+    margin-top: 5px;
+    text-align: justify;
+    text-align-last: justify;
+    width: 100%;
 }
-
 .mobile-container .main-section .text-content .subtitle {
     font-size: 10px;
     font-weight: lighter;

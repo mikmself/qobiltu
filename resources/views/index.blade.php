@@ -251,7 +251,7 @@
                     <tr>
                         <td>Pukul</td>
                         <td>:</td>
-                        <td>09.00 WIB - Selesai</td>
+                        <td>08.00 WIB - Selesai</td>
                     </tr>
                 </table>
             </div>
@@ -346,7 +346,7 @@
             <form class="response-form" action="{{route('store-message')}}" method="POST">
                 @csrf
                 <input type="hidden" name="username" value="{{$guest->username}}">
-                <p class="form-title">Form</p>
+                <p class="form-title">Give a Wish</p>
                 <input class="form-input" type="text" name="name" placeholder="Nama" id="" value="{{$guest->name}}" disabled>
                 <select class="form-select" name="attendance" id="" required>
                     <option value="" disabled selected>Will You Board the Sunny?</option>
