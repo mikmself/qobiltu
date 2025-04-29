@@ -159,8 +159,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-
     window.scrollTo(0, 50);
+
     setTimeout(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }, 100);

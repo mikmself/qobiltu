@@ -8,7 +8,7 @@
     {{--  Perload  --}}
     <link rel="preload" href="/assets/img/cover/background.png" as="image">
     <link rel="preload" href="https://res.cloudinary.com/djhl6s1ch/image/upload/v1743915202/cover_resize_tggzcq.jpg" as="image">
-    <link rel="preload" href="/assets/css/styles.css" as="style">
+    <link rel="preload" href="/assets/css/styles.css?v={{ filemtime(public_path('assets/css/styles.css')) }}" as="style">
     <link rel="preload" href="/vendor/aos/aos.css" as="style">
     <link rel="preload" href="/vendor/aos/aos.js" as="script">
     <link rel="preload" href="/assets/img/cover/left/top.png" as="image">
@@ -482,7 +482,6 @@
     </section>
 </div>
 <script src="/vendor/aos/aos.js"></script>
-<script src="/assets/js/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -552,6 +551,6 @@
         });
     });
 </script>
+<script src="{{ asset('assets/js/script.js') }}?v={{ filemtime(public_path('assets/js/script.js')) }}"></script>
 </body>
-
 </html>
