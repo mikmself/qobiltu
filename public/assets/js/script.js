@@ -77,10 +77,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         isPlaying = !isPlaying;
     });
-
-    window.onload = function () {
-        window.scrollTo(0, 0);
-    };
 });
 
 const weddingDate = new Date('2025-05-20T09:00:00').getTime();
