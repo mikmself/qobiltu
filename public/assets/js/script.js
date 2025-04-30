@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-const weddingDate = new Date('2025-05-20T09:00:00').getTime();
+const weddingDate = new Date('2025-05-20T08:00:00').getTime();
 const countdown = setInterval(function () {
     const now = new Date().getTime();
     const distance = weddingDate - now;
