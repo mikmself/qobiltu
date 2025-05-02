@@ -2,6 +2,7 @@
 @import url("/assets/fonts/Always In My Heart.ttf");
 @import url("/assets/fonts/NetflixSans-Regular.otf");
 @import url("/assets/fonts/NetflixSans-Bold.otf");
+
 @keyframes zoomOutAndBorder {
     0% {
         transform: scale(1.2);
@@ -509,94 +510,117 @@
         opacity: 1;
     }
 }
+
 @keyframes zoomIn {
     from {
         opacity: 0;
         transform: scale(0.6);
     }
+
     to {
         opacity: 1;
         transform: scale(1);
     }
 }
+
 @keyframes pulse {
     0% {
         transform: scale(1);
         opacity: 0.8;
     }
+
     100% {
         transform: scale(1.1);
         opacity: 1;
     }
 }
+
 @keyframes shine {
     0% {
         box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
         transform: scale(1);
     }
+
     10% {
         box-shadow: 0 0 18px rgba(255, 20, 20, 0.55);
         transform: scale(1.005);
     }
+
     20% {
         box-shadow: 0 0 21px rgba(255, 40, 40, 0.6);
         transform: scale(1.01);
     }
+
     30% {
         box-shadow: 0 0 24px rgba(255, 60, 60, 0.65);
         transform: scale(1.015);
     }
+
     40% {
         box-shadow: 0 0 27px rgba(255, 80, 80, 0.7);
         transform: scale(1.02);
     }
+
     50% {
         box-shadow: 0 0 30px rgba(255, 98, 98, 0.75);
         transform: scale(1.025);
     }
+
     60% {
         box-shadow: 0 0 27px rgba(255, 80, 80, 0.7);
         transform: scale(1.02);
     }
+
     70% {
         box-shadow: 0 0 24px rgba(255, 60, 60, 0.65);
         transform: scale(1.015);
     }
+
     80% {
         box-shadow: 0 0 21px rgba(255, 40, 40, 0.6);
         transform: scale(1.01);
     }
+
     90% {
         box-shadow: 0 0 18px rgba(255, 20, 20, 0.55);
         transform: scale(1.005);
     }
+
     100% {
         box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
         transform: scale(1);
     }
 }
+
 @keyframes slideUpAnimation {
     0% {
         transform: translateY(0);
         opacity: 1;
     }
+
     50% {
         opacity: 0.5;
     }
+
     100% {
         transform: translateY(-100%);
         opacity: 0;
         display: none;
     }
 }
+
 @keyframes slideIn {
     from {
         transform: translateX(-50%) translateY(100%);
     }
+
     to {
         transform: translateX(-50%) translateY(0);
     }
 }
+
+/* === Responsive Layout Improvement === */
+/* Efek zoom-in manual ala AOS */
 * {
     margin: 0;
     padding: 0;
@@ -613,47 +637,52 @@ body {
 }
 
 .mobile-container {
-    max-width: 480px;
-    width: 480px;
+    max-width: 375px;
+    width: 100%;
     max-height: 100dvh;
 }
+
 .mobile-container .cover-section {
     position: absolute;
     max-width: inherit;
-    height: 100dvh !important;
+    height: 100%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     background-image: url("/assets/img/cover/background.png");
+    background-size: cover;
     filter: brightness(80%);
+    overflow: none;
     z-index: 9;
 }
-.mobile-container .cover-section.slide-up {
-    transform: translateY(-100%);
-    transition: transform 1s ease-in-out;
-    animation: slideUpAnimation 3s ease-out forwards;
-}
+
 .mobile-container .cover-section .invitation-title {
     color: #443113;
     font-size: 2.5em;
     margin-top: -1em;
+    margin-bottom: 0.4em;
     opacity: 0;
 }
+
 .mobile-container .cover-section .image-container {
-    width: 70% !important;
-    height: 10em;
+    width: 80% !important;
+    height: 12em;
+    margin-bottom: 0.5em;
 }
+
 .mobile-container .cover-section .image-container .main-image {
     width: 100% !important;
     position: relative;
     z-index: 2;
 }
+
 .mobile-container .cover-section .image-container .main-image.initial-state {
     transform: scale(1.2);
     opacity: 1;
 }
+
 .mobile-container .cover-section .image-container .main-image.final-state {
     animation: zoomOutAndBorder 2s forwards;
     will-change: transform, box-shadow;
@@ -661,6 +690,7 @@ body {
     backface-visibility: hidden;
     perspective: 1000px;
 }
+
 .mobile-container .cover-section .details-container {
     margin-top: 0em;
     opacity: 0;
@@ -672,10 +702,15 @@ body {
     justify-content: space-between;
     align-items: center;
 }
-.mobile-container .cover-section .details-container h1,
+
+.mobile-container .cover-section .details-container h1 {
+    font-size: 10px;
+}
+
 .mobile-container .cover-section .details-container h2 {
     font-size: 10px;
 }
+
 .mobile-container .cover-section .details-container .left-details {
     display: flex;
     flex-direction: column;
@@ -686,6 +721,7 @@ body {
     height: auto;
     margin-top: 1cm;
 }
+
 .mobile-container .cover-section .details-container .right-details {
     display: flex;
     flex-direction: column;
@@ -695,6 +731,7 @@ body {
     width: 5%;
     height: auto;
 }
+
 .mobile-container .cover-section .details-container .center-details {
     width: 90%;
     display: flex;
@@ -704,6 +741,7 @@ body {
     align-items: center;
     margin-top: 0.5cm;
 }
+
 .mobile-container .cover-section .details-container .center-details .couple-names {
     font-family: "Playfair Display", serif;
     font-weight: light;
@@ -716,6 +754,7 @@ body {
     filter: brightness(40%);
     margin-bottom: 0.2em;
 }
+
 .mobile-container .cover-section .details-container .center-details .wedding-type {
     font-family: "Playfair Display", serif;
     font-size: 18px;
@@ -727,6 +766,7 @@ body {
     filter: brightness(40%);
     margin-bottom: 0.2em;
 }
+
 .mobile-container .cover-section .details-container .center-details .date-display {
     display: flex;
     flex-direction: row;
@@ -743,13 +783,16 @@ body {
     filter: brightness(40%);
     letter-spacing: 5px;
 }
+
 .mobile-container .cover-section .details-container .center-details .date-display .date-icon {
     margin-right: 0.3cm;
 }
+
 .mobile-container .cover-section .details-container .center-details .bottom-message {
     margin: -1em;
     width: 80%;
 }
+
 .mobile-container .cover-section .details-container .center-details .bottom-message .invitation-text {
     width: 100%;
     font-size: 1.1em;
@@ -757,6 +800,7 @@ body {
     color: #422F0F;
     margin-top: 0.5cm;
 }
+
 .mobile-container .cover-section .recipient-name {
     width: 100%;
     font-size: 1.2em;
@@ -764,6 +808,7 @@ body {
     margin-top: 1.2em;
     opacity: 0;
 }
+
 .mobile-container .cover-section .action-button {
     display: flex;
     flex-direction: row;
@@ -781,10 +826,12 @@ body {
     font-weight: bolder;
     opacity: 0;
 }
+
 .mobile-container .cover-section .action-button .button-icon {
     width: 12px;
     margin-right: 0.3cm;
 }
+
 .mobile-container .cover-section .logo-container {
     width: 55%;
     display: flex;
@@ -796,25 +843,61 @@ body {
     top: 1.5cm;
     opacity: 0;
 }
+
 .mobile-container .cover-section .logo-container .logo-image {
     height: 0.7cm;
 }
-.mobile-container .invitation-title,
-.mobile-container .details-container,
-.mobile-container .recipient-name,
-.mobile-container .action-button,
+
+.mobile-container .invitation-title {
+    opacity: 0;
+    transform: scale(0.6);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.mobile-container .details-container {
+    opacity: 0;
+    transform: scale(0.6);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.mobile-container .recipient-name {
+    opacity: 0;
+    transform: scale(0.6);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.mobile-container .action-button {
+    opacity: 0;
+    transform: scale(0.6);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
 .mobile-container .logo-container {
     opacity: 0;
     transform: scale(0.6);
     transition: transform 0.5s ease, opacity 0.5s ease;
 }
-.mobile-container .invitation-title.animate,
-.mobile-container .details-container.animate,
-.mobile-container .recipient-name.animate,
-.mobile-container .action-button.animate,
+
+.mobile-container .invitation-title.animate {
+    animation: zoomIn 2s forwards;
+}
+
+.mobile-container .details-container.animate {
+    animation: zoomIn 2s forwards;
+}
+
+.mobile-container .recipient-name.animate {
+    animation: zoomIn 2s forwards;
+}
+
+.mobile-container .action-button.animate {
+    animation: zoomIn 2s forwards;
+}
+
 .mobile-container .logo-container.animate {
     animation: zoomIn 2s forwards;
 }
+
 .mobile-container .main-section {
     display: flex;
     flex-direction: column;
@@ -822,6 +905,7 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 .mobile-container .main-section .top-content {
     display: flex;
     flex-direction: column;
@@ -835,6 +919,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
 }
+
 .mobile-container .main-section .top-content .icon-container {
     width: 90%;
     display: flex;
@@ -844,13 +929,16 @@ body {
     align-items: center;
     margin-top: -1.5cm;
 }
+
 .mobile-container .main-section .top-content .icon-container img.netflix-logo {
     width: 1cm;
 }
+
 .mobile-container .main-section .top-content .cover-image {
     margin-top: 1cm;
     width: 3.3cm;
 }
+
 .mobile-container .main-section .top-content .other-info {
     width: 50%;
     display: flex;
@@ -863,6 +951,7 @@ body {
     font-family: "NetflixSans-Regular", sans-serif;
     font-size: 14px;
 }
+
 .mobile-container .main-section .top-content .play-button {
     width: 90%;
     height: 1.1cm;
@@ -882,6 +971,7 @@ body {
     padding-bottom: 0.2cm;
     cursor: pointer;
 }
+
 .mobile-container .main-section .top-content .play-button .button-split {
     width: 18%;
     display: flex;
@@ -893,9 +983,11 @@ body {
     font-family: "NetflixSans-Regular", sans-serif;
     font-weight: bold;
 }
+
 .mobile-container .main-section .top-content .play-button .play-icon {
     width: 12px;
 }
+
 .mobile-container .main-section .text-content {
     color: #F3F2ED;
     font-family: "NetflixSans-Regular", sans-serif;
@@ -903,11 +995,13 @@ body {
     position: relative;
     top: -2.5cm;
 }
+
 .mobile-container .main-section .text-content .episode-title {
     font-size: 14px;
     margin-top: 1cm;
     font-weight: bold;
 }
+
 .mobile-container .main-section .text-content .description-text {
     font-size: 12px;
     font-weight: 300;
@@ -919,14 +1013,17 @@ body {
     font-weight: lighter;
     margin-top: 0.2cm;
 }
+
 .mobile-container .main-section .text-content .subtitle .creator-text {
     position: relative;
     top: 0.1cm;
 }
+
 .mobile-container .main-section .action-container {
     width: 90%;
     margin-top: -2cm;
 }
+
 .mobile-container .main-section .action-container .actions-row {
     width: 40%;
     display: flex;
@@ -937,6 +1034,7 @@ body {
     color: #F3F2ED;
     font-size: 8px;
 }
+
 .mobile-container .main-section .action-container .actions-row .action-item {
     display: flex;
     flex-direction: column;
@@ -944,13 +1042,16 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 .mobile-container .main-section .action-container .actions-row .action-item .action-label {
     margin-top: 0.2cm;
 }
+
 .mobile-container .main-section .slider-container {
     width: 95%;
     margin-top: -2cm;
 }
+
 .mobile-container .main-section .slider-container .slider-title {
     color: #F3F2ED;
     margin-left: 2%;
@@ -958,15 +1059,18 @@ body {
     font-weight: bold;
     margin-top: 1cm;
 }
+
 .mobile-container .main-section .slider-container .image-slider {
     display: flex;
     flex-direction: row;
     overflow: scroll;
     margin-top: 0.3cm;
 }
+
 .mobile-container .main-section .slider-container .image-slider::-webkit-scrollbar {
     display: none;
 }
+
 .mobile-container .main-section .slider-container .image-slider .slider-image {
     margin-left: 0.2cm;
     width: 4cm;
@@ -977,6 +1081,7 @@ body {
     -o-object-position: center center;
     object-position: center center;
 }
+
 .mobile-container .main-section .quote-card {
     width: 90%;
     background-color: #F3F2ED;
@@ -995,12 +1100,14 @@ body {
     font-family: "NetflixSans-Regular", sans-serif;
     font-weight: bolder;
 }
+
 .mobile-container .main-section .quote-card .quote-image {
     width: 3cm;
     position: absolute;
     left: 0;
     bottom: 0;
 }
+
 .mobile-container .main-section .quote-card .quote-text {
     width: 70%;
     text-align: right;
@@ -1008,15 +1115,19 @@ body {
     margin-left: 3cm;
     padding-bottom: 1cm;
 }
+
 .mobile-container .main-section .card-container {
     width: 90%;
 }
+
 .mobile-container .main-section .card-container .card-image {
     width: 100%;
 }
+
 .mobile-container .main-section .card-container .card-image:nth-child(2) {
     margin-top: 1cm;
 }
+
 .mobile-container .main-section .countdown-container {
     margin-top: 3cm;
     width: 95%;
@@ -1027,9 +1138,11 @@ body {
     align-items: center;
     padding: 0.3cm;
 }
+
 .mobile-container .main-section .countdown-container .left-content {
     width: 60%;
 }
+
 .mobile-container .main-section .countdown-container .left-content .countdown-timer {
     width: 100%;
     display: flex;
@@ -1040,6 +1153,7 @@ body {
     margin-top: 0.5cm;
     color: #F3F2ED;
 }
+
 .mobile-container .main-section .countdown-container .left-content .countdown-timer .timer-item {
     display: flex;
     flex-direction: column;
@@ -1047,24 +1161,30 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 .mobile-container .main-section .countdown-container .left-content .countdown-timer .timer-item .timer-number {
     font-family: "NetflixSans-Bold", sans-serif;
     font-weight: bolder;
     font-size: 20px;
 }
+
 .mobile-container .main-section .countdown-container .left-content .countdown-timer .timer-item .timer-label {
     font-size: 10px;
     margin-top: 0.2cm;
 }
+
 .mobile-container .main-section .countdown-container .left-content .akad-image {
     width: 100%;
 }
+
 .mobile-container .main-section .countdown-container .right-content {
     width: 40%;
 }
+
 .mobile-container .main-section .countdown-container .right-content .thanos-image {
     width: 100%;
 }
+
 .mobile-container .main-section .events-container {
     width: 100%;
     display: flex;
@@ -1074,6 +1194,7 @@ body {
     align-items: center;
     margin-top: 2cm;
 }
+
 .mobile-container .main-section .events-container .event-card {
     background-color: #F3F2ED;
     width: 49%;
@@ -1083,13 +1204,16 @@ body {
     border-radius: 10px;
     border-left: 3px solid #E50914;
 }
+
 .mobile-container .main-section .events-container .event-card .event-title {
     font-weight: bolder;
     font-size: 14px;
 }
+
 .mobile-container .main-section .events-container .event-card .event-table {
     font-size: 10px;
 }
+
 .mobile-container .main-section .events-container .place-card {
     background-color: #F3F2ED;
     width: 100%;
@@ -1101,9 +1225,11 @@ body {
     font-size: 14px;
     margin-top: 0.5cm;
 }
+
 .mobile-container .main-section .events-container .place-card .place-title {
     font-weight: bolder;
 }
+
 .mobile-container .main-section .events-container .place-card .map-link {
     background-color: #E50914;
     padding: 0.2cm 1cm;
@@ -1111,6 +1237,7 @@ body {
     text-decoration: none;
     border-radius: 5px;
 }
+
 .mobile-container .main-section .prayer-section {
     width: 70%;
     display: flex;
@@ -1124,9 +1251,11 @@ body {
     font-weight: bold;
     margin-top: 2cm;
 }
+
 .mobile-container .main-section .prayer-section .prayer-author {
     margin-top: 0.5cm;
 }
+
 .mobile-container .wallet-section {
     max-width: 95%;
     overflow: hidden Im !important;
@@ -1138,6 +1267,7 @@ body {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     box-sizing: border-box;
 }
+
 .mobile-container .wallet-section .wallet-vertical {
     display: flex;
     flex-direction: column;
@@ -1146,6 +1276,7 @@ body {
     padding: 1cm 0;
     background-color: #E50914;
 }
+
 .mobile-container .wallet-section .wallet-vertical .wallet-letter {
     font-family: "NetflixSans-Bold", sans-serif;
     font-size: 24px;
@@ -1156,6 +1287,7 @@ body {
     margin-top: 0.5cm;
     padding: 0.2cm;
 }
+
 .mobile-container .wallet-section .payment-options {
     flex: 1;
     padding: 0.5cm;
@@ -1164,6 +1296,7 @@ body {
     gap: 1.5cm;
     width: 100%;
 }
+
 .mobile-container .wallet-section .payment-options h3 {
     width: 100%;
     font-family: "NetflixSans-Bold", sans-serif;
@@ -1174,12 +1307,14 @@ body {
     border-bottom: 2px solid #E50914;
     padding-bottom: 0.3cm;
 }
+
 .mobile-container .wallet-section .payment-options .qr-container {
     display: flex;
     justify-content: space-between;
     gap: 0.3cm;
     width: 100%;
 }
+
 .mobile-container .wallet-section .payment-options .qr-container .qr-item {
     background-color: #F3F2ED;
     padding: 0.2cm;
@@ -1193,15 +1328,18 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 .mobile-container .wallet-section .payment-options .qr-container .qr-item:hover {
     transform: translateY(-5px);
 }
+
 .mobile-container .wallet-section .payment-options .qr-container .qr-item .qr-image {
     width: 100%;
     margin-bottom: 0.5cm;
     border: 2px solid #E50914;
     border-radius: 5px;
 }
+
 .mobile-container .wallet-section .payment-options .qr-container .qr-item .bank-info {
     font-family: "NetflixSans-Regular", sans-serif;
     font-size: 14px;
@@ -1209,12 +1347,14 @@ body {
     text-align: center;
     font-weight: bold;
 }
+
 .mobile-container .wallet-section .payment-options .bank-container {
     display: flex;
     flex-direction: column;
     gap: 1cm;
     font-family: "NetflixSans-Regular", sans-serif;
 }
+
 .mobile-container .wallet-section .payment-options .bank-container .bank-item {
     width: 100%;
     background-size: cover;
@@ -1228,9 +1368,11 @@ body {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease;
 }
+
 .mobile-container .wallet-section .payment-options .bank-container .bank-item:hover {
     transform: translateY(-5px);
 }
+
 .mobile-container .wallet-section .payment-options .bank-container .bank-item .bank-name {
     position: absolute;
     top: 1cm;
@@ -1239,10 +1381,12 @@ body {
     font-weight: bold;
     color: #101010;
 }
+
 .mobile-container .wallet-section .payment-options .bank-container .bank-item .bank-pin {
     width: 40px;
     margin-top: 20px;
 }
+
 .mobile-container .wallet-section .payment-options .bank-container .bank-item .account-name {
     font-size: 14px;
     font-weight: bold;
@@ -1250,12 +1394,14 @@ body {
     margin-top: 0.1cm;
     margin-top: 0.3cm;
 }
+
 .mobile-container .wallet-section .payment-options .bank-container .bank-item .bank-number {
     font-size: 14px;
     font-weight: bold;
     color: #101010;
     margin-top: 0.1cm;
 }
+
 .mobile-container .wallet-section .payment-options .bank-container .bank-item .copy-btn {
     position: absolute;
     bottom: 0.5cm;
@@ -1273,13 +1419,16 @@ body {
     justify-content: space-between;
     align-items: center;
 }
+
 .mobile-container .wallet-section .payment-options .bank-container .bank-item .copy-btn img {
     width: 15px;
     margin-left: 0.2cm;
 }
+
 .mobile-container .wallet-section .payment-options .bank-container .bank-item .copy-btn:hover {
     background-color: rgba(255, 255, 255, 0.4);
 }
+
 .mobile-container .form-section {
     width: 100%;
     display: flex;
@@ -1291,6 +1440,7 @@ body {
     margin-top: 2cm;
     background-color: #000000;
 }
+
 .mobile-container .form-section .response-form {
     width: 90%;
     display: flex;
@@ -1299,6 +1449,7 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 .mobile-container .form-section .response-form .form-title {
     font-family: "NetflixSans-Regular", sans-serif;
     font-weight: bolder;
@@ -1307,7 +1458,20 @@ body {
     margin-top: 1cm;
     align-self: start;
 }
-.mobile-container .form-section .response-form .form-input,
+
+.mobile-container .form-section .response-form .form-input {
+    width: 100%;
+    color: #8C8C8C;
+    border: none;
+    outline: none;
+    height: 1.5cm;
+    margin-top: 1cm;
+    padding-left: 0.5cm;
+    font-weight: bolder;
+    font-size: 16px;
+    text-align: left;
+}
+
 .mobile-container .form-section .response-form .form-select {
     width: 100%;
     color: #8C8C8C;
@@ -1320,6 +1484,7 @@ body {
     font-size: 16px;
     text-align: left;
 }
+
 .mobile-container .form-section .response-form .form-textarea {
     width: 100%;
     background-color: #333333;
@@ -1335,6 +1500,7 @@ body {
     padding-top: 0.5cm;
     resize: none;
 }
+
 .mobile-container .form-section .response-form .form-button {
     width: 100%;
     height: 1.5cm;
@@ -1347,6 +1513,7 @@ body {
     font-weight: bolder;
     font-size: 16px;
 }
+
 .mobile-container .form-section .thanks-message {
     width: 90%;
     display: flex;
@@ -1358,18 +1525,35 @@ body {
     margin-top: 1cm;
     padding-bottom: 2cm;
 }
+
 .mobile-container .form-section .thanks-message .thanks-text {
     font-family: "NetflixSans-Regular", sans-serif;
     font-size: 17px;
     color: #8C8C8C;
 }
+
 .mobile-container .form-section .thanks-message .thanks-author {
     margin-top: 1cm;
     color: #8C8C8C;
 }
+
 .mobile-container .form-section .thanks-message .thanks-author .couple-names {
     color: #F3F2ED;
     font-weight: bolder;
+}
+
+.cover-section.slide-up {
+    transform: translateY(-100%);
+    transition: transform 1s ease-in-out;
+    animation: slideUpAnimation 3s ease-out forwards;
+}
+
+.cover-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9;
 }
 
 .main-section {
@@ -1377,6 +1561,7 @@ body {
     opacity: 0;
     transition: opacity 0.8s ease;
 }
+
 .main-section.show {
     visibility: visible;
     opacity: 1;
@@ -1387,6 +1572,7 @@ body {
     transition: transform 0.2s, box-shadow 0.3s;
     animation: shine 3s infinite;
 }
+
 .action-button:active {
     transform: scale(0.95);
 }
@@ -1409,70 +1595,50 @@ body {
     transform: scale(0.85);
     transition: opacity 1s ease, transform 1s ease;
 }
+
 [data-animate].show {
     opacity: 1;
     transform: scale(1);
 }
 
-/* Mobile (max-width: 480px) */
 @media (max-width: 480px) {
     body {
         padding: 0;
     }
+
     .mobile-container {
         max-width: 100%;
         height: 100dvh;
         max-width: 100%;
     }
 }
-@media (orientation: landscape) {
-    body {
-        overflow: scroll !important;
-    }
-    .mobile-container .cover-section {
-        height: auto !important;
-        padding-bottom: 2cm !important;
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .mobile-container {
+        max-width: 600px;
     }
 }
-/* Tablet (481px hingga 768px) */
-@media (min-width: 481px) {
-    .logo-container {
-        width: 70% !important;
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .mobile-container {
+        max-width: 800px;
     }
 }
+
 @media (min-width: 1025px) {
     .mobile-container {
         max-width: 960px;
         padding: 2rem;
         height: auto;
     }
+
     .mobile-container .cover-section {
         position: relative;
         min-height: 100dvh;
     }
-}
-/* Medium Tablets (min-width: 600px) */
-@media (min-width: 600px) {
-    .logo-container {
-        width: 40%;
-    }
-    .logo-container .logo-image {
-        height: 1cm !important;
-    }
-    .details-container {
-        margin-top: 4cm !important;
-    }
-}
-/* Large Tablets/Desktops (min-width: 991px) */
-@media (min-width: 991px) {
-    .details-container {
-        margin-top: 5cm !important;
-    }
-}
-/* Very Large Screens (min-width: 1600px) */
-@media (min-width: 1600px) {
-    .logo-container {
-        width: 80% !important;
+
+    .details-container .animate {
+        margin-top: 15em;
     }
 }
 /*# sourceMappingURL=styles.css.map */
