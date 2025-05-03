@@ -14,7 +14,7 @@ class HomeController extends Controller
     {
         try {
             $guest = Guest::where('username', $username)->first();
-            $guestMessages = Message::latest()->limit(20)->get();
+            $guestMessages = Message::latest()->get();
             if (!$guest) {
                 return redirect('/')->with('error', 'User not found');
             }
